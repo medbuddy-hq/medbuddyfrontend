@@ -1,0 +1,40 @@
+.container {
+  height: 100%;
+  padding: 2rem;
+}
+
+.container > * {
+    margin-bottom: 3rem;
+}
+
+.welcome_container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  list-style: none;
+}
+
+.patient_image {
+  height: 4rem;
+  width: 4rem;
+  margin: 0 1rem;
+}
+
+.patient_image img {
+  border-radius: 50%;
+}
+
+.welcome_text {
+  padding-top: 3%;
+  font-size: 1.15rem;
+  font-family: OpenSans-Bold;
+  color: #0603b0;
+}
+
+.notifications {
+  position: absolute;
+  top: 20%;
+  right: 0;
+  height: 2rem;
+  width: 2rem;
+}
