@@ -21,8 +21,8 @@
 }
 
 .onBoarding_svg {
-     width: 70%;
-     height: 55%;
+     width: 100%;
+     height: 75%;
     
 }
 
@@ -31,10 +31,10 @@
     font-size: 1.1rem;
 }
 
-.onBoarding_text h3 {
+.onBoarding_text h2 {
     margin-bottom: 0.5rem;
-    font-size: 1.3rem;
-    line-height: 1.7rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
     font-family: Poppins-Bold;
 }
 

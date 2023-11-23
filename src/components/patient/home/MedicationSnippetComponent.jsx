@@ -1,7 +1,7 @@
 import svgObject from "@/styles/svgIcons";
-import styles from "./MedicationComponent.module.css";
+import styles from "./MedicationSnippetComponent.module.css";
 
-const MedicationComponent = (props) => {
+const MedicationSnippetComponent = (props) => {
   const dum = [1, 2, 3];
   return (
     <main className={styles.med_container}>
@@ -10,17 +10,23 @@ const MedicationComponent = (props) => {
       </div>
       {dum.map((el) => {
         return (
-          <div className={el / 2 === 1 ? styles.med_card : `${styles.med_card} ${styles.red_pill}`}>
+          <div
+            className={
+              el / 2 === 1
+                ? styles.med_card
+                : `${styles.med_card} ${styles.red_pill}`
+            }
+          >
             <div className={styles.drug_image}>
-              <div>{el/ 2 === 1 ? svgObject.bottle : svgObject.pills}</div>
+              <div>{el / 2 === 1 ? svgObject.bottle : svgObject.pills}</div>
             </div>
             <div className={styles.drug_details}>
               <h2 className={styles.drug_name}>Ampicillin</h2>
               <text>
                 <span>250mg. </span>
                 <span>
-                  bkdidkjhvoher;ljgiohye boeug8iyrepysg vfhipfoeht8ygir bjeklugu
-                  ieherg iehriie ooe
+                  Take 1 Pill(s) before eating. Do not take with beverages,
+                  Lactose reduces the effectiveness of this drugs.
                 </span>
               </text>
             </div>
@@ -31,4 +37,4 @@ const MedicationComponent = (props) => {
   );
 };
 
-export default MedicationComponent;
+export default MedicationSnippetComponent;

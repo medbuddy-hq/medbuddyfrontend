@@ -1,10 +1,14 @@
-import { useRouter } from "next/router";
-import PatientHomeComponent from "@/components/patient/screen1/PatientHomeComponent";
+import IndexComponent from "@/components/patient/home/indexComponent";
+import TabsComponent from "@/components/patient/general/TabsComponent";
 
 const patientPage = () => {
-
-    return <PatientHomeComponent/>
-}
+  return (
+    <>
+      <IndexComponent/>
+      <TabsComponent/>
+    </>
+  );
+};
 
 export default patientPage;
 

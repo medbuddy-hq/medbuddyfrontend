@@ -11,7 +11,7 @@ const OnBoardingComponent = (props) => {
       <main className={styles.onBoarding_details}>
         <div className={styles.onBoarding_svg}>{svgObject.oldPersonHelped}</div>
         <div className={styles.onBoarding_text}>
-          <h3>Your Journey to adequate wellbeing starts here.</h3>
+          <h2>Your Journey to adequate wellbeing starts here.</h2>
           <p>
             Staying on top of your health is only a few taps away. Start by
             creating your profile for a personalized experience

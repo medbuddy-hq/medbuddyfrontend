@@ -1,5 +1,6 @@
 import styles from "./PatientHistoryComponent.module.css";
 import Link from "next/link";
+import HistoryItem from "../general/HistoryItem";
 
 const PatientHistoryComponent = (props) => {
   const dum = [1, 2, 3];
@@ -10,9 +11,7 @@ const PatientHistoryComponent = (props) => {
         <Link href='/'> See all</Link>
       </div>
       {dum.map((el) => {
-        return <div className={styles.history_item}>
-            {el}
-        </div>;
+        return <HistoryItem/>
       })}
     </main>
   );

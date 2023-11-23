@@ -15,7 +15,7 @@ const GetDOB = (props) => {
         <h1>What is your date of birth?</h1>
 
         <div className={styles.percent_svg}>{svgObject.seventypercent}</div>
-        <div className={styles.birthdaywarning_svg}>{svgObject.birthdaywarning}</div>
+        <div className={styles.warning_svg}>{svgObject.birthdaywarning}</div>
         <div className={styles.form_input}></div>
       </form>
 

@@ -22,6 +22,10 @@
   width: 100%;
 }
 
+.form_getGoals {
+  height: 95%;
+}
+
 .svg {
   height: 3rem;
   width: 3rem;
@@ -39,7 +43,7 @@
   margin-bottom: 0.5rem;
 }
 
-.birthdaywarning_svg {
+.warning_svg {
   height: 1.5rem;
   width: 100%;
 }
@@ -114,6 +118,29 @@
 .circular_checkbox input:checked + .checkmark {
   background-color: #2196F3; 
   border: 2px solid #2196F3; 
+}
+
+
+.goal_width {
+  width: 100%;
+  position: relative;
+  margin: 2rem 0;
+}
+
+.goal_width_option {
+  position: absolute;
+  width: 60%;
+  background-color: #C2DBFF;
+  color: #066DFE;
+  padding: 0.35rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+
+.goal_width_option:hover, .picked_goal {
+  background-color: #066DFE;
+  color: #C2DBFF;
 }
 
 .next_question {
