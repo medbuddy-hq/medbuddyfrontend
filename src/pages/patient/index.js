@@ -1,4 +1,4 @@
-import IndexComponent from "@/components/patient/home/indexComponent";
+import IndexComponent from "@/components/patient/home/IndexComponent";
 import TabsComponent from "@/components/patient/general/TabsComponent";
 
 const patientPage = () => {
