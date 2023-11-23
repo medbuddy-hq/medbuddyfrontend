@@ -21,10 +21,10 @@ const RegistrationCompleteComponent = (props) => {
         </div>
       </main>
       <div className={styles.add_meds}>
-        <Link href=""> Add My Meds</Link>
+        <Link href="/patient/medication"> Add My Meds</Link>
       </div>
       <div className={styles.skip_prompt}>
-        <Link href=""> Skip</Link>
+        <Link href="/patient"> Skip</Link>
       </div>
     </section>
   );
