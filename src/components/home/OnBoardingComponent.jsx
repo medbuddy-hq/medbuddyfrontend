@@ -6,7 +6,7 @@ const OnBoardingComponent = (props) => {
   return (
     <section className={styles.container}>
       <div className={styles.exit}>
-        <Link href= '' className={styles.exit_button}>X</Link>
+        <Link href= '/medic-patient' className={styles.exit_button}>X</Link>
       </div>
       <main className={styles.onBoarding_details}>
         <div className={styles.onBoarding_svg}>{svgObject.oldPersonHelped}</div>

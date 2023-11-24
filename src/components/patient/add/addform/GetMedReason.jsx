@@ -1,14 +1,15 @@
 import styles from "./addFormStyles.module.css";
-import Link from "next/link";
 import svgObject from "@/styles/svgIcons";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
-import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { registerMedicationActions } from "@/store/generalStore";
 
-const GetMedName = (props) => {
-  const [text, setText] = useState("");
+const GetMedReason = (props) => {
   const [textValid, setTextValid] = useState(false);
+  const [value, setValue] = useState("");
   const router = useRouter();
   const dispatch = useDispatch();
 
@@ -16,37 +17,27 @@ const GetMedName = (props) => {
     ? `${styles.button} ${styles.valid_button}`
     : `${styles.button}`;
 
+  const updateReason = (event) => {
+    setValue(event.target.value);
+  };
+
   useEffect(() => {
-    if (text.length > 2) {
+    if (value.length > 1) {
       setTextValid(true);
     } else {
       setTextValid(false);
     }
-  }, [text]);
-
-  const updateMedTextHandler = (event) => {
-    setText(event.target.value);
-  };
+  }, [value]);
 
   const nextPageHandler = () => {
     if (textValid) {
-      dispatch(
-        registerMedicationActions.updateMedicationData([
-          {
-            name: text,
-          },
-        ])
-      );
-      dispatch(
-        registerMedicationActions.updateArrayData([
-          {
-            name: text,
-          },
-        ])
-      );
-      router.push("/patient/add/med-form");
+      dispatch(registerMedicationActions.updateMedicationData([{
+        treatment: value
+      }]))
+      router.push("/patient/add/med-duration");
     }
   };
+
 
   return (
     <section className={styles.container}>
@@ -54,23 +45,25 @@ const GetMedName = (props) => {
         <Link href="" className={styles.back_button}>
           {svgObject.goBack}
         </Link>
-        <h2>Add New Meds</h2>
       </div>
       <form className={styles.form}>
+        <div className={styles.svg}>{svgObject.pharmacy}</div>
+        <h1>What are you taking it for?</h1>
+        <div className={styles.percent_svg}>{svgObject.thirtypercent}</div>
+
         <div className={styles.form_input}>
-          <div className={styles.med_name_svg}> {svgObject.pharmacy}</div>
-          <input
-            onChange={updateMedTextHandler}
-            className={styles.med_name_input}
-            type="text"
-            placeholder="Enter name of medication here"
-            name="drug_name"
-          />
+          <div className={styles.input_strength}>
+            <input
+              type="text"
+              placeholder="Enter why you are taking it"
+              onChange={updateReason}
+            />
+          </div>
         </div>
       </form>
 
       <div className={styles.next_question}>
-        <div className={buttonClass} onClick={nextPageHandler}>
+        <div onClick={nextPageHandler} className={buttonClass}>
           Next &gt;
         </div>
       </div>
@@ -78,4 +71,4 @@ const GetMedName = (props) => {
   );
 };
 
-export default GetMedName;
+export default GetMedReason;

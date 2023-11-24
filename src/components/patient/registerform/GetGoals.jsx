@@ -58,14 +58,7 @@ const GetGoals = (props) => {
       try {
         const registerRequest = await fetch(`/api/register-new`, {
           method: "POST",
-          body: JSON.stringify({
-            "firstname": "chiemelie",
-            "lastname": "victor",
-            "dob": "2003-11-22",
-            "email": "vickayobiora@gmail.com",
-            "password": "1234567",
-            "gender": "male"
-        }),
+          body: JSON.stringify(userData),
         });
 
         if (!registerRequest.ok) {
@@ -78,11 +71,14 @@ const GetGoals = (props) => {
 
         const response = await registerRequest.json();
         console.log(response);
-        localStorage.setItem("token", response.data.token);
+        console.log(response.data.data.token)
+        localStorage.setItem("token", response.data.data.token);
+        setDataisFetching(false)
         //Navigate to the regComplete page upon completion
         router.push("/patient/registerform/register-complete");
       } catch (err) {
         console.log(err);
+        router.push('/')
       }
     }
   };

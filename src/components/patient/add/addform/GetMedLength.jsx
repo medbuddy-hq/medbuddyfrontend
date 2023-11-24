@@ -5,16 +5,16 @@ import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import { registerMedicationActions } from "@/store/generalStore";
 
-const GetMedFormComponent = (props) => {
+const GetMedLength = (props) => {
   const router = useRouter();
   const dispatch = useDispatch();
 
-  const updateDrugFormHandler = (event) => {
-    const drugform = event.target.dataset.drugform
-    dispatch(registerMedicationActions.updateArrayData([{
-      form : drugform
-    }]))
-    router.push('/patient/add/med-dosage')
+
+  const updateLengthHandler = (event) => {
+    const days = parseInt(event.target.dataset.days);
+    dispatch(registerMedicationActions.updateTotalDosage(days));
+    router.push('/patient/add/med-comments')
+
   };
 
   return (
@@ -26,38 +26,34 @@ const GetMedFormComponent = (props) => {
         <h2>Add New Meds</h2>
       </div>
       <form className={styles.form}>
-        <div className={styles.svg}>{svgObject.pharmacy}</div>
-        <h1>What form is the med?</h1>
-        <div className={styles.percent_svg}>{svgObject.twentyPercent}</div>
+        <div className={styles.svg}>{svgObject.calendarSvg()}</div>
+        <h1>How long is your treatment?</h1>
+        <div className={styles.percent_svg}>{svgObject.hundredpercent}</div>
 
         <div className={styles.form_input}>
           <ul className={styles.medform_list}>
-            <li onClick={updateDrugFormHandler} data-drugform="Tablet">
+            <li data-days="5" onClick={updateLengthHandler}>
               <div className={styles.medform_list_item}>
-                <div className={styles.medform_svg}>{svgObject.tablets}</div>
-                <div>Tablet</div>
+                <div>5 days</div>
               </div>
               <div> &gt;</div>
             </li>
-            <li onClick={updateDrugFormHandler} data-drugform="Solution">
+            <li data-days="7" onClick={updateLengthHandler}>
               <div className={styles.medform_list_item}>
-                <div className={styles.medform_svg}>{svgObject.solution}</div>
-                <div>Solution</div>
+                <div>1 week</div>
               </div>
               <div> &gt;</div>
             </li>
-            <li onClick={updateDrugFormHandler} data-drugform="Capsule">
+            <li data-days="15" onClick={updateLengthHandler}>
               <div className={styles.medform_list_item}>
-                <div className={styles.medform_svg}>{svgObject.capsule}</div>
-                <div>Capsule</div>
+                <div>15 days</div>
               </div>
               <div> &gt;</div>
             </li>
             <li>
               <Link href="">
                 <div className={styles.medform_list_item}>
-                  <div className={styles.medform_svg}>{svgObject.needle}</div>
-                  <div>Others</div>
+                  <div>Set number of days</div>
                 </div>
                 <div> &gt;</div>
               </Link>
@@ -69,4 +65,4 @@ const GetMedFormComponent = (props) => {
   );
 };
 
-export default GetMedFormComponent;
+export default GetMedLength;

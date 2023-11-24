@@ -3,6 +3,7 @@
   flex-direction: column;
   padding: 2rem;
   height: 100%;
+  position: relative;
 }
 
 .back {
@@ -15,6 +16,13 @@
   height: 100%;
   width: 10%;
   display: block;
+}
+
+.signup_container {
+  color: #066dfe;
+  display: flex;
+  justify-content: center;
+  font-size: 1.3rem;
 }
 
 .form {
@@ -70,6 +78,7 @@
   font-size: 1.1rem;
   border-color: transparent;
   background-color: #dcdada;
+  margin-bottom: 1rem;
 }
 
 .form_input label {

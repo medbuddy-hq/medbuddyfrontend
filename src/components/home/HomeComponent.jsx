@@ -10,14 +10,12 @@ const HomeComponent = (props) => {
         <div className={styles.shadow}></div>
       </div>
       <div className={styles.med_name}>
-        <h1>
-          <span className={styles.black}>Med</span>Buddy
-        </h1>
+  {svgObject.medBuddyLogo}
       </div>
       <div className={styles.get_started}>
-        <Link href="create-profile"> Get Started</Link>
+        <Link href="medic-patient"> Get Started</Link>
       </div>
-      <div className={styles.logIn_prompt}>Already have an account? <Link href=''> Log In</Link></div>
+      <div className={styles.logIn_prompt}>Already have an account? <Link href='/login'> Log In</Link></div>
     </section>
   );
 };

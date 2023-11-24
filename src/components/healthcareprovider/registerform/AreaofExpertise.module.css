@@ -1,0 +1,22 @@
+
+
+.area_input {
+    padding: 0.8rem 1rem;
+    font-size: 1.3rem;
+    border-radius: 1rem;
+    border-color: transparent;
+    background-color: #E9E9E9;
+    color: #575757;
+    margin-top: 3rem;
+    margin-bottom: 15rem;
+}
+
+.area_input {
+    outline: none;
+    border-color: #066dfe;
+}
+
+.area_svg {
+    height: 4rem;
+    width: 20%;
+}

@@ -1,8 +1,8 @@
-import styles from "./TabsComponent.module.css";
+import styles from "./HealthTabsComponent.module.css";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-const TabsItem = (props) => {
+const HealthTabItem = (props) => {
   const router = useRouter();
   const currentPath = router.pathname;
 
@@ -20,4 +20,4 @@ const TabsItem = (props) => {
   );
 };
 
-export default TabsItem;
+export default HealthTabItem;

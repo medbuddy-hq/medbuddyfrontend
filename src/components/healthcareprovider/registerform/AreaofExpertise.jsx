@@ -1,12 +1,12 @@
-import styles from "./addFormStyles.module.css";
+import styles from "../../../components/patient/add/addform/addFormStyles.module.css";
+import classes from './AreaofExpertise.module.css'
 import Link from "next/link";
 import svgObject from "@/styles/svgIcons";
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
-import { registerMedicationActions } from "@/store/generalStore";
 
-const GetMedName = (props) => {
+const AreaofExpertise = (props) => {
   const [text, setText] = useState("");
   const [textValid, setTextValid] = useState(false);
   const router = useRouter();
@@ -24,58 +24,44 @@ const GetMedName = (props) => {
     }
   }, [text]);
 
-  const updateMedTextHandler = (event) => {
+  const updateExpertiseTextHandler = (event) => {
     setText(event.target.value);
   };
 
   const nextPageHandler = () => {
-    if (textValid) {
-      dispatch(
-        registerMedicationActions.updateMedicationData([
-          {
-            name: text,
-          },
-        ])
-      );
-      dispatch(
-        registerMedicationActions.updateArrayData([
-          {
-            name: text,
-          },
-        ])
-      );
-      router.push("/patient/add/med-form");
-    }
-  };
+    //if (textValid)
+  
+};
 
   return (
     <section className={styles.container}>
       <div className={styles.back}>
-        <Link href="" className={styles.back_button}>
+        <Link href="/healthcareprovider/registerform" className={styles.back_button}>
           {svgObject.goBack}
         </Link>
-        <h2>Add New Meds</h2>
       </div>
       <form className={styles.form}>
         <div className={styles.form_input}>
-          <div className={styles.med_name_svg}> {svgObject.pharmacy}</div>
+          <div className={classes.area_svg}> {svgObject.doctorSvg}</div>
+          <h1>What is your area of medical expertise?</h1>
+          <div> {svgObject.hundredpercent}</div>
           <input
-            onChange={updateMedTextHandler}
-            className={styles.med_name_input}
+            onChange={updateExpertiseTextHandler}
+            className={classes.area_input}
             type="text"
-            placeholder="Enter name of medication here"
-            name="drug_name"
+            placeholder="Enter area of Expertise here"
+            name="area-expert"
           />
         </div>
       </form>
 
       <div className={styles.next_question}>
         <div className={buttonClass} onClick={nextPageHandler}>
-          Next &gt;
+          Done &gt;
         </div>
       </div>
     </section>
   );
 };
 
-export default GetMedName;
+export default AreaofExpertise;
