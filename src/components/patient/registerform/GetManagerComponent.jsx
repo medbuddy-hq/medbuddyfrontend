@@ -1,8 +1,25 @@
 import svgObject from "@/styles/svgIcons";
 import styles from './FormStyles.module.css'
 import Link from "next/link";
+import { useState } from "react";
 
 const GetMangerComponent = (props) => {
+
+  const [myHealthClass, setMyHealthClass] = useState(false)
+  const [someoneHealthClass, setsHealthClass] = useState(false)
+
+  const updateMyHealthClickedHandler = event => {
+    setMyHealthClass(true)
+    setsHealthClass(false)
+  }
+  const updateSomeoneHealthClickedHandler = event => {
+    setMyHealthClass(false)
+    setsHealthClass(true)
+  }
+
+  const healthClass = myHealthClass ? `${styles.option} ${styles.picked_option}`: `${styles.option}`
+  const sHealthClass = someoneHealthClass  ? `${styles.option} ${styles.picked_option}`: `${styles.option}`
+
   return (
     <section className={styles.container}>
       <div className={styles.back}>
@@ -18,13 +35,13 @@ const GetMangerComponent = (props) => {
           {svgObject.thirtypercent}
         </div>
         <div className={styles.form_input}>
-          <div className={styles.option}>My Health</div>
-          <div className={styles.option}>Someone else's health</div>
+          <div className={healthClass} onClick={updateMyHealthClickedHandler}>My Health</div>
+          <div className={sHealthClass} onClick={updateSomeoneHealthClickedHandler}>Someone else's health</div>
         </div>
       </form>
 
       <div className={styles.next_question}>
-        <Link href="/patient/registerform/gender-identity"> Next &gt;</Link>
+        <Link href="/patient/registerform/gender-identity" className={`${styles.button} ${styles.valid_button}`}> Next &gt;</Link>
       </div>
     </section>
   );

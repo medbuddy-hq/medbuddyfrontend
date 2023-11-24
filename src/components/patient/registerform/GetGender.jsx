@@ -1,8 +1,52 @@
 import svgObject from "@/styles/svgIcons";
 import styles from "./FormStyles.module.css";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { useDispatch } from "react-redux";
+import { registerPatientActions } from "@/store/generalStore";
 
 const GetGender = (props) => {
+  const dispatch = useDispatch()
+  const router = useRouter()
+  const [checkedOption, setCheckedOption] = useState(null)
+  const [formValid, setFormValid] = useState(false);
+
+  const buttonClass = formValid
+    ? `${styles.button} ${styles.valid_button}`
+    : `${styles.button}`;
+
+   const updateCheckedHandler = event => {
+       if( event.target.checked){
+        setCheckedOption(event.target.name)
+       }
+   };
+console.log(checkedOption)
+
+const currentCheck = arg => arg === checkedOption ? true : false ;
+
+useEffect(() => {
+     if(checkedOption !== null){
+      setFormValid(true)
+     }
+}, [checkedOption])
+
+   const nextPageHandler = () => {
+    //Here, we update the store with data from the validated form and then
+    // programatically move to the next page
+    if (formValid) {
+      dispatch(
+        registerPatientActions.updateRegisterData([
+        {
+          gender: checkedOption
+        }
+        ])
+      );
+      //Navigate to the next page
+      router.push("/patient/registerform/date-of-birth");
+    }
+  };
+
   return (
     <section className={styles.container}>
       <div className={styles.back}>
@@ -19,31 +63,28 @@ const GetGender = (props) => {
           <ul className={styles.pick_gender}>
             <li>
               <label className={styles.circular_checkbox}>
-                <input type="checkbox" name="Male"/>
-                <span class={styles.checkmark}></span>
+                <input type="checkbox" name="male" checked = {currentCheck('male')} onChange={updateCheckedHandler}/>
+                <span className={styles.checkmark}></span>
                Male
               </label>
             </li>
             <li>
             <label className={styles.circular_checkbox}>
-                <input type="checkbox" name="Female"/>
-                <span class={styles.checkmark}></span>
+                <input type="checkbox" name="female" checked={currentCheck('female')} onChange={updateCheckedHandler}/>
+                <span className={styles.checkmark}></span>
              Female
               </label>
             </li>
             <li>
-            <label className={styles.circular_checkbox}>
-                <input type="checkbox" name="not-specified"/>
-                <span class={styles.checkmark}></span>
-            I'd rather not say
-              </label>
             </li>
           </ul>
         </div>
       </form>
 
       <div className={styles.next_question}>
-        <Link href="/patient/registerform/date-of-birth"> Next &gt;</Link>
+        <div onClick={nextPageHandler} className={buttonClass}>
+          Next &gt;
+        </div>
       </div>
     </section>
   );

@@ -1,6 +1,6 @@
 import styles from "./PatientHomeComponent.module.css";
 import svgObject from "@/styles/svgIcons";
-import MedicationSnippetComponent from "./MedicationSnippetComponent";
+import MedicationSnippetComponent from "../general/MedicationSnippetComponent";
 import PatientHistoryComponent from "./PatientHistoryComponent";
 import SearchComponent from "@/components/general/SearchComponent";
 
