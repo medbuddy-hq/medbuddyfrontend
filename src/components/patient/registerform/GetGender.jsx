@@ -50,7 +50,7 @@ useEffect(() => {
   return (
     <section className={styles.container}>
       <div className={styles.back}>
-        <Link href="" className={styles.back_button}>
+        <Link href="/patient/registerform/manage-health" className={styles.back_button}>
           {svgObject.goBack}
         </Link>
       </div>

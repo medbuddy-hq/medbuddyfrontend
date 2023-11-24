@@ -104,7 +104,7 @@ const GetGoals = (props) => {
       {!dataIsFetching && (
         <div>
           <div className={styles.back}>
-            <Link href="" className={styles.back_button}>
+            <Link href="/patient/registerform/email" className={styles.back_button}>
               {svgObject.goBack}
             </Link>
           </div>
