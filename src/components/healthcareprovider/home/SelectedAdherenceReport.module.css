@@ -42,6 +42,17 @@
     margin-bottom: 4rem;
   }
 
+  .patientName div {
+    margin: 0 0.5rem;
+    height: 2rem;
+    width: 2rem;
+
+  }
+
+  .patientName div img {
+    border-radius: 50%;
+  }
+
   .adherence_item {
     margin: 1rem 0;
   }

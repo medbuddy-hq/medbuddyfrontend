@@ -1,7 +1,7 @@
 import GetMedTime from "@/components/patient/add/addform/GetMedTime"
 import TabsComponent from "@/components/patient/general/TabsComponent"
 
-const GetMedTime = () => {
+const MedTime = () => {
     return<>
    <GetMedTime/> 
     <TabsComponent/></>

@@ -25,7 +25,7 @@ const patientDataInitialState = {
       {
         name: "Panadol",
         strength: "20mg",
-        form: "Tablet",
+        form: "ml",
         comment: "Do not take after eating",
         treatment: '',
         start_date: '2022/6/6'

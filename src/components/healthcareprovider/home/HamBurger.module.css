@@ -34,7 +34,7 @@
 
 .settings_heading {
     color: white;
-
+  
 }
 
 .settings_heading div:not(:first-child){
@@ -45,6 +45,7 @@
 .patients_heading, .sub_settings {
     padding-bottom: 0.5rem;
     border-bottom: 1px solid white;
+    margin-bottom: 0.5rem;
     color: white;
 }
 
@@ -52,6 +53,13 @@
     height: 3rem;
     width: 3rem;
     margin: 0 1rem;
+
+}
+
+.iv {
+    height: 2rem;
+    width: 2rem;
+    margin: 0 1rem;   
 }
 
 .log_out {
@@ -59,4 +67,10 @@
     bottom: 2rem;
     display: flex;
     color: white;
+}
+
+
+.sideBar_text {
+    display: flex;
+    align-items: center;
 }

@@ -20,6 +20,7 @@ const SelectedAdherenceReport = (props) => {
         </div>
       </div>
       <div className={styles.patientName}>
+        <div><img src="/images/image-1.png" alt="" /></div>
         <h4>{patientData.name}</h4>
       </div>
     <div className={styles.adherence_item}>{svgObject.adherenceFrameOneSvg}</div>

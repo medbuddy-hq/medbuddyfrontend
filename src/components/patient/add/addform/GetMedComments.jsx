@@ -73,6 +73,8 @@ const GetMedComments = (props) => {
     }, 2000);
   };
 
+  console.log(medData);
+
   return (
     <section className={styles.container}>
       {dataIsFetching && (

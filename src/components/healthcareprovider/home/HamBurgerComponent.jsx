@@ -28,18 +28,18 @@ useEffect(() => {
         <div className={styles.logo}>{svgObject.medbuddyBW}</div>
         <div className={styles.patients_heading}>Patients</div>
         <div className={styles.invite}>
-          <div className={styles.shareApp}>{svgObject.shareApp}</div>
+          <div className={styles.shareApp}>{svgObject.invitePatient}</div>
           <div> Invite Patient</div>
         </div>
         <div className={styles.settings_heading}>
           <div className={styles.sub_settings}> Settings</div>
           <div>
             <div className={styles.shareApp}>{svgObject.whiteQuestion}</div>
-            <div>Restart help tour</div>
+            <div className={styles.sideBar_text}>Restart help tour</div>
           </div>
           <div>
             <div className={styles.shareApp}>{svgObject.shareApp}</div>
-            <div>Share app with friends</div>
+            <div className={styles.sideBar_text}>Share app</div>
           </div>
         </div>
         <div className={styles.log_out} onClick={logOutHandler}>

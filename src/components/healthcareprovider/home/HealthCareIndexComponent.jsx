@@ -5,25 +5,30 @@ import { useSelector } from "react-redux";
 import { useState } from "react";
 import HamBurgerComponent from "./HamBurgerComponent";
 
+
 const HealthCareIndexComponent = (props) => {
   const [showHamburger, setShowHamburger] = useState(false);
   const healthName = useSelector(state => state.healthCareProvider.healthRegisterData.name)
   const patientDummyData = [
     {
-      name: "Kingsley Ekpe",
+      name: "Olawunmi G",
       illness: "Malaria",
+      imageNum: '1'
     },
     {
-      name: "Mariam S",
+      name: "Anna. T",
       illness: "Tuberclosis",
+      imageNum: '2'
     },
     {
-      name: "Kendrick Lamar",
+      name: "Mrs. Samson",
       illness: "Myopia",
+      imageNum: '3'
     },
     {
-      name: "Uche Kenneth",
+      name: "John. O",
       illness: "Whooping cough",
+      imageNum: '4'
     },
   ];
 
@@ -53,7 +58,7 @@ const HealthCareIndexComponent = (props) => {
         </li>
         <li className={styles.notifications}>{svgObject.notification}</li>
       </ul>
-      <h2>Your Patients</h2>
+      <h2 className={styles.my_patients}>Your Patients</h2>
       {patientDummyData.map((el) => {
         return <HealthPatientItem itemData={el} key={Math.random()} />;
       })}

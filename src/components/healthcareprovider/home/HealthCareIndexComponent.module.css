@@ -3,7 +3,7 @@
     padding: 2rem;
   }
   
-  .container > * {
+  .container > *:not(:first-child) {
       margin-bottom: 2rem;
       position: relative;
       z-index: 100;
@@ -38,5 +38,9 @@
     right: 0;
     height: 2rem;
     width: 2rem;
+  }
+
+  .my_patients {
+    margin-top: 2rem;
   }
   
