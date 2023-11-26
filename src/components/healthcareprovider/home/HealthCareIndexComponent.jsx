@@ -39,6 +39,7 @@ const HealthCareIndexComponent = (props) => {
   return (
     <section className={styles.container}>
       {showHamburger && <HamBurgerComponent removeHamburger={updateHamburgerStateHandler}/>}
+      {showHamburger && <Backdrop remove={updateHamburgerStateHandler}/>}
       <ul className={styles.welcome_container}>
         <div
           className={styles.hamBurger}

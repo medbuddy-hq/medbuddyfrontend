@@ -28,8 +28,9 @@ const SelectedAdherenceReport = (props) => {
   }
 ];
 
-const imagePath = imageRoutesObject.filter(el => el.num === itemData.imageNum);
+const imagePath = imageRoutesObject.filter(el => el.num === patientData.imageNum);
 
+console.log(imagePath)
 
   return (
     <section className={styles.container}>
@@ -42,7 +43,7 @@ const imagePath = imageRoutesObject.filter(el => el.num === itemData.imageNum);
         </div>
       </div>
       <div className={styles.patientName}>
-        <div><img src={imagePath[0].imageNum}/></div>
+        <div><img src={imagePath[0].path}/></div>
         <h4>{patientData.name}</h4>
       </div>
     <div className={styles.adherence_item}>{svgObject.adherenceFrameOneSvg}</div>
