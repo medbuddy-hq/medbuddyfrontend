@@ -83,7 +83,6 @@ const GetGoals = (props) => {
     }
   };
 
-  console.log(userData);
   return (
     <section className={styles.container}>
       {dataIsFetching && (

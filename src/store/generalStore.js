@@ -1,5 +1,51 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 
+const patientDataInitialState = {
+  data: {
+    nameOfPatient: "Chike Edet",
+    allMeds: [
+      {
+        name: "Panadol",
+        strength: "20mg",
+        form: "Tablet",
+        comment: "Do not take after eating",
+        isActive: true,
+      },
+    ],
+    activeMeds: [
+      {
+        name: "Panadol",
+        strength: "20mg",
+        form: "Tablet",
+        comment: "Do not take after eating",
+        start_date: '2023/12/12'
+      },
+    ],
+    inActiveMeds: [
+      {
+        name: "Panadol",
+        strength: "20mg",
+        form: "Tablet",
+        comment: "Do not take after eating",
+        treatment: '',
+        start_date: '2022/6/6'
+      }
+    ],
+  },
+};
+
+const healthCareProviderInitialState = {
+  healthRegisterData: {
+    name: "",
+    email: "",
+    password: "",
+  },
+  selectedPatient: {
+    name: "",
+    illness: "",
+  },
+};
+
 const initialRegisterPatientState = {
   registerData: {
     firstname: "",
@@ -37,6 +83,31 @@ const initialMedicationState = {
   },
 };
 
+const healthCareProvider = createSlice({
+  name: "healthcareprovider",
+  initialState: healthCareProviderInitialState,
+  reducers: {
+    updateSelectedPatient(state, action) {
+      state.selectedPatient = action.payload;
+    },
+    updateHealthRegisterData(state, action) {
+      state.healthRegisterData = action.payload;
+    },
+  },
+});
+
+const patientData = createSlice({
+  name: "patientData",
+  initialState: patientDataInitialState,
+  reducers: {
+    updatePatientData(state, action) {
+      state.data.allMeds = action.payload.allMeds;
+      state.data.activeMeds = action.payload.activeMeds;
+      state.data.nameOfPatient = action.payload.name;
+    },
+  },
+});
+
 const RegisterPatientData = createSlice({
   name: "registerPatient",
   initialState: initialRegisterPatientState,
@@ -70,7 +141,7 @@ const RegisterMedicationData = createSlice({
           [key]: value[0],
         };
       });
-      const medData = {...state.medData}
+      const medData = { ...state.medData };
       console.log(medData);
     },
     updateArrayData(state, action) {
@@ -83,15 +154,16 @@ const RegisterMedicationData = createSlice({
           [key]: value[0],
         };
       });
-      const medData = {...state.medData}
+      const medData = { ...state.medData };
       console.log(medData);
     },
     updateTotalDosage(state, action) {
       // dosage text in medicine object is also updated here
-      state.medData.total_number_of_dosage = action.payload * state.medData.daily_dosage;
-      const text = `${state.medData.medicine.strength} to be taken ${state.medData.daily_dosage} times a day`
-      state.medData.medicine.dosage = text
-      const medData = {...state.medData}
+      state.medData.total_number_of_dosage =
+        action.payload * state.medData.daily_dosage;
+      const text = `${state.medData.medicine.strength} to be taken ${state.medData.daily_dosage} times a day`;
+      state.medData.medicine.dosage = text;
+      const medData = { ...state.medData };
       console.log(medData);
     },
   },
@@ -99,11 +171,15 @@ const RegisterMedicationData = createSlice({
 
 export const registerPatientActions = RegisterPatientData.actions;
 export const registerMedicationActions = RegisterMedicationData.actions;
+export const healthCareProviderActions = healthCareProvider.actions;
+export const patientDataActions = patientData.actions;
 
 const store = configureStore({
   reducer: {
+    healthCareProvider: healthCareProvider.reducer,
     registerPatient: RegisterPatientData.reducer,
     registerMedication: RegisterMedicationData.reducer,
+    patientData: patientData.reducer,
   },
 });
 

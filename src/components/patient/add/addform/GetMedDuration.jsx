@@ -15,7 +15,7 @@ const GetMedDuration = (props) => {
   return (
     <section className={styles.container}>
       <div className={styles.back}>
-        <Link href="" className={styles.back_button}>
+        <Link href="/patient/med-reason" className={styles.back_button}>
           {svgObject.goBack}
         </Link>
       </div>
@@ -33,7 +33,7 @@ const GetMedDuration = (props) => {
               <div> &gt;</div>
             </li>
             <li>
-              <Link href="">
+              <Link href="/under-construction">
                 <div className={styles.medform_list_item}>
                   <div>On a recurrent cycle</div>
                 </div>
@@ -41,7 +41,7 @@ const GetMedDuration = (props) => {
               </Link>
             </li>
             <li>
-              <Link href="">
+              <Link href="/under-construction">
                 <div className={styles.medform_list_item}>
                   <div>Every X days</div>
                 </div>

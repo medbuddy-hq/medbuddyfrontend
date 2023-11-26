@@ -1,34 +1,36 @@
 import svgObject from "@/styles/svgIcons";
 import styles from "./MedicationSnippetComponent.module.css";
+import { useSelector } from "react-redux";
 
 const MedicationSnippetComponent = (props) => {
-  const dum = [1, 2, 3];
+  const medications = useSelector(state => state.patientData.data.allMeds);
+  console.log(medications)
+
   return (
     <main className={styles.med_container}>
       <div className={styles.med_container_text}>
         <h3>Ongoing Medication</h3>
       </div>
-      {dum.map((el) => {
+      {medications.map((el) => {
         return (
-          <div
+          <div key={Math.random() * 20000}
             className={
-              el / 2 === 1
+              el.form === 'Solution'
                 ? styles.med_card
                 : `${styles.med_card} ${styles.red_pill}`
             }
           >
             <div className={styles.drug_image}>
-              <div>{el / 2 === 1 ? svgObject.bottle : svgObject.pills}</div>
+              <div>{el.form === 'Solution' ? svgObject.bottle : svgObject.pills}</div>
             </div>
             <div className={styles.drug_details}>
-              <h2 className={styles.drug_name}>Ampicillin</h2>
-              <text>
-                <span>250mg. </span>
+              <h2 className={styles.drug_name}>{el.name}</h2>
+              <p>
+                <span>{el.strength}  </span>
                 <span>
-                  Take 1 Pill(s) before eating. Do not take with beverages,
-                  Lactose reduces the effectiveness of this drugs.
+                     {el.comment}
                 </span>
-              </text>
+              </p>
             </div>
           </div>
         );

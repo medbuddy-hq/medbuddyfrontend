@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    padding: 1rem;
+    border-radius: 0.8rem;
+    background-color: #C2DBFF;
+    position: relative;
+    justify-content: space-between;
+    margin: 1rem 0;
+}
+
+.textContainer h4 {
+    line-height: 0.5rem;
+}
+
+.click {
+
+   font-size: 0.8rem;
+   margin-top: 1.5rem;
+}
+
+.go_icon {
+    font-size: 1.2rem;
+    background-color: #066DFE;
+    color: white;
+    padding: 0.1rem 0.5rem;
+    height: 23%;
+    margin-top: 5%;
+}

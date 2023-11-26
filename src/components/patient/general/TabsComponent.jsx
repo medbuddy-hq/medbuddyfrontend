@@ -22,12 +22,12 @@ const TabsComponent = () => {
           setSvg={svgObject.tabsAdd}
         />
         <TabsItem
-          setPath="/patient/messages"
+          setPath="/under-construction"
           tabName="Messages"
           setSvg={svgObject.tabsMessages}
         />
         <TabsItem
-          setPath="/patient/profile"
+          setPath="/under-construction"
           tabName="Profile"
           setSvg={svgObject.tabsProfile}
         />

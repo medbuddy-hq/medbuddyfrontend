@@ -1,9 +1,8 @@
 import styles from "./ErrorComponent.module.css";
 import svgObject from "@/styles/svgIcons";
-import Link from "next/link";
 import { useRouter } from "next/router";
 
-const ErrorComponent = (props) => {
+const UnderConstructionComponent = (props) => {
     const router = useRouter()
 
 const goBackHandler = () => {
@@ -19,11 +18,11 @@ const goBackHandler = () => {
       </div>
       <div className={styles.container_inner}>
         <div className={styles.medBuddyLogo}>{svgObject.medBuddyLogo}</div>
-        <h3>For some reason, we could not get you what you wanted</h3>
-        <div className={styles.errorSvg}>{svgObject.errorSvg}</div>
+        <h3>Page under construction</h3>
+        <div className={styles.errorSvg}>{svgObject.constructionSvg}</div>
       </div>
     </section>
   );
 };
 
-export default ErrorComponent;
+export default UnderConstructionComponent;

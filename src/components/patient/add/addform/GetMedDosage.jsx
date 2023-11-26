@@ -62,7 +62,7 @@ const GetMedDosage = (props) => {
   return (
     <section className={styles.container}>
       <div className={styles.back}>
-        <Link href="" className={styles.back_button}>
+        <Link href="/patient/add/med-form" className={styles.back_button}>
           {svgObject.goBack}
         </Link>
       </div>

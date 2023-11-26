@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
-import { registerPatientActions } from "@/store/generalStore";
+import { healthCareProviderActions } from "@/store/generalStore";
 import { emailChecker } from "@/components/patient/registerform/GetEmailAndPass";
 
 const SignUpForm = (props) => {
@@ -91,21 +91,12 @@ const SignUpForm = (props) => {
 
   const nextPageHandler = () => {
     //Here, we update the store with data from the validated form and then
-    /*  // programatically move to the next page
+     // programatically move to the next page
     if (formValid) {
-      dispatch(
-        registerPatientActions.updateRegisterData([
-          {
-            email: emailAndPassDetails.email,
-          },
-          {
-            password: emailAndPassDetails.password,
-          },
-        ])
-      );
-      //Navigate to the next page
-   
-    }*/ router.push("/healthcareprovider/registerform/areaofexpertise");
+      dispatch(healthCareProviderActions.updateHealthRegisterData(nameEmailAndPassDetails))   
+    }    
+     //Navigate to the next page
+    router.push("/healthcareprovider/registerform/areaofexpertise");
   };
 
   return (

@@ -7,27 +7,27 @@ const HealthTabsComponent = () => {
     <section className={styles.container}>
       <ul className={styles.tabsList}>
         <HealthTabItem
-          setPath="/patient/home"
+          setPath="/healthcareprovider/home"
           tabName="Home"
           setSvg={svgObject.tabsHome}
         />
         <HealthTabItem
-          setPath="/patient/medication"
+          setPath="/under-construction"
           tabName="calendar"
           setSvg={svgObject.calendarSvg}
         />
         <HealthTabItem
-          setPath="/patient/add"
+          setPath="/under-construction"
           tabName="Add Patient"
           setSvg={svgObject.tabsAdd}
         />
         <HealthTabItem
-          setPath="/patient/messages"
+          setPath="/under-construction"
           tabName="Messages"
           setSvg={svgObject.tabsMessages}
         />
         <HealthTabItem
-          setPath="/patient/profile"
+          setPath="under-construction"
           tabName="Profile"
           setSvg={svgObject.tabsProfile}
         />

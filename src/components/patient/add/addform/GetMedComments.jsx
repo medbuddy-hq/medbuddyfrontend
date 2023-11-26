@@ -21,7 +21,6 @@ const GetMedComments = (props) => {
     setText(event.target.value);
   };
 
-
   const nextPageHandler = async () => {
     dispatch(
       registerMedicationActions.updateMedicationData([
@@ -31,56 +30,65 @@ const GetMedComments = (props) => {
       ])
     );
 
-    const token = localStorage.getItem("token");
-    console.log(token)
-    //For there to be a token, that means a user is signed In
-    //We then use said token to make the call
-    //Remember, localStorage ALWAYS returns a string
-    //If there is no such item, localST returns 'undefined'. It is a string
-    if (token !== 'undefined') {
-      setDataisFetching(true)
-      try {
-        const registerRequest = await fetch(`/api/register-med`, {
-          method: "POST",
-          body: JSON.stringify(medData),
-          headers: {
-            token
+    setTimeout(async () => {
+      const token = localStorage.getItem("token");
+      console.log(token);
+      //For there to be a token, that means a user is signed In
+      //We then use said token to make the call
+      //Remember, localStorage ALWAYS returns a string
+      //If there is no such item, localST returns 'undefined'. It is a string
+      if (token !== "undefined") {
+        setDataisFetching(true);
+        try {
+          const registerRequest = await fetch(`/api/register-med`, {
+            method: "POST",
+            body: JSON.stringify(medData),
+            headers: {
+              token,
+            },
+          });
+
+          if (!registerRequest.ok) {
+            // we handle the error if bad status code comes
+            const errorData = await registerRequest.json();
+            throw new Error(errorData.error || "Something went wrong");
           }
-        });
 
-        if (!registerRequest.ok) {
-          // we handle the error if bad status code comes
-          const errorData = await registerRequest.json();
-          throw new Error(errorData.error || "Something went wrong");
+          console.log(registerRequest.status);
+
+          const response = await registerRequest.json();
+          console.log(response);
+
+          //Navigate to the HomePage page upon completion
+          setDataisFetching(false);
+          router.push("/patient/home");
+        } catch (err) {
+          console.log(err);
+          router.push("/error");
         }
-
-        console.log(registerRequest.status);
-
-        const response = await registerRequest.json();
-        console.log(response);
-
-        //Navigate to the HomePage page upon completion
-        setDataisFetching(false)
-        router.push("/patient/home");
-      } catch (err) {
-        console.log(err);
-        router.push('')
+      } else {
+        // we send them back to the login page
+        router.push("/");
       }
-    }else{
-    // we send them back to the login page
-      router.push('/')
-    }
-
+    }, 2000);
   };
 
   return (
     <section className={styles.container}>
       {dataIsFetching && (
-        <div className={styles.loading_spinner}>
+        <div
+          style={{
+            height: "100%",
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <TailSpin
             color="#066dfe"
-            height="100"
-            width="100"
+            height="70"
+            width="70"
             ariaLabel="tail-spin-loading"
             visible={true}
           />
@@ -89,10 +97,9 @@ const GetMedComments = (props) => {
       {!dataIsFetching && (
         <div>
           <div className={styles.back}>
-            <Link href="" className={styles.back_button}>
+            <Link href="/med-length" className={styles.back_button}>
               {svgObject.goBack}
             </Link>
-            <h2>Ampicillin 250mg</h2>
           </div>
           <div>{svgObject.hundredpercent}</div>
           <form className={styles.form}>
@@ -120,27 +127,3 @@ const GetMedComments = (props) => {
 };
 
 export default GetMedComments;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

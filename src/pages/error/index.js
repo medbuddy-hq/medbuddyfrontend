@@ -1,7 +1,8 @@
+import ErrorComponent from "@/components/general/ErrorComponent"
 
 
 const errorPage = () => {
-    return
+    return <ErrorComponent/>
 }
 
-export default errorPage
+export default errorPage;

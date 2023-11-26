@@ -64,7 +64,7 @@ const LoginComponent = (props) => {
 
   const loginHandler = async () => {
     //Here, Since it is the next Question, we make the http request to register the new user
-    if (goalSelected) {
+    if (formValid) {
       setDataisFetching(true);
       try {
         const registerRequest = await fetch(`/api/login`, {
@@ -81,6 +81,7 @@ const LoginComponent = (props) => {
         console.log(registerRequest.status);
 
         const response = await registerRequest.json();
+        console.log(response)
 
         localStorage.setItem("token", response.data.data.token);
         setDataisFetching(false);

@@ -7,7 +7,7 @@ const GetMedFrequency = (props) => {
   return (
     <section className={styles.container}>
       <div className={styles.back}>
-        <Link href="" className={styles.back_button}>
+        <Link href="/patient/add/med-duration" className={styles.back_button}>
           {svgObject.goBack}
         </Link>
       </div>
@@ -22,7 +22,7 @@ const GetMedFrequency = (props) => {
             <MedFrequencyItem valueNum="2" text="Twice a Day." />
             <MedFrequencyItem valueNum="3" text="3 times a Day." />
             <li>
-              <Link href="">
+              <Link href="/under-construction">
                 <div className={styles.medform_list_item}>
                   <div>X times a day</div>
                 </div>
@@ -30,7 +30,7 @@ const GetMedFrequency = (props) => {
               </Link>
             </li>
             <li>
-              <Link href="">
+              <Link href="/under-construction">
                 <div className={styles.medform_list_item}>
                   <div>Every X hours</div>
                 </div>

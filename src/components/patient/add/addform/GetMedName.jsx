@@ -51,10 +51,7 @@ const GetMedName = (props) => {
   return (
     <section className={styles.container}>
       <div className={styles.back}>
-        <Link href="" className={styles.back_button}>
-          {svgObject.goBack}
-        </Link>
-        <h2>Add New Meds</h2>
+        <h2>Add New Med</h2>
       </div>
       <form className={styles.form}>
         <div className={styles.form_input}>

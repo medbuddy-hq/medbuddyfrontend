@@ -5,6 +5,12 @@
   
   .container > * {
       margin-bottom: 2rem;
+      position: relative;
+      z-index: 100;
+  }
+
+  .hamBurger {
+    margin-right: 1rem;
   }
   
   .welcome_container {

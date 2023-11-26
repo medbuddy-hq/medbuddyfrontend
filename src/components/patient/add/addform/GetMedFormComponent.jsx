@@ -20,7 +20,7 @@ const GetMedFormComponent = (props) => {
   return (
     <section className={styles.container}>
       <div className={styles.back}>
-        <Link href="" className={styles.back_button}>
+        <Link href="/patient/add" className={styles.back_button}>
           {svgObject.goBack}
         </Link>
         <h2>Add New Meds</h2>
@@ -54,7 +54,7 @@ const GetMedFormComponent = (props) => {
               <div> &gt;</div>
             </li>
             <li>
-              <Link href="">
+              <Link href="/under-construction">
                 <div className={styles.medform_list_item}>
                   <div className={styles.medform_svg}>{svgObject.needle}</div>
                   <div>Others</div>

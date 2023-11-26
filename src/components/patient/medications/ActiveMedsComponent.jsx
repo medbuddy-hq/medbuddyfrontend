@@ -1,11 +1,13 @@
 import HistoryItem from "../general/HistoryItem";
+import { useSelector } from "react-redux";
 
 const ActiveMedsComponent = (props) => {
-  const dum = [1, 3, 2, 4, 5, 6];
+  const activeMeds = useSelector(state => state.patientData.data.activeMeds);
+
   return (
     <>
-      {dum.map((el) => {
-        return <HistoryItem />;
+      {activeMeds.map((el) => {
+        return <HistoryItem key={Math.random() *1000} data={el}/>;
       })}
     </>
   );

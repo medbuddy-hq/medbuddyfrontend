@@ -1,21 +1,64 @@
-import styles from './HealthCareIndexComponent.module.css'
-import svgObject from '@/styles/svgIcons';
+import styles from "./HealthCareIndexComponent.module.css";
+import svgObject from "@/styles/svgIcons";
+import HealthPatientItem from "./HealthPatientItem";
+import { useSelector } from "react-redux";
+import { useState } from "react";
+import HamBurgerComponent from "./HamBurgerComponent";
 
-const HealthCareIndexComponent = props => {
-    return <section className={styles.container}>
-   <ul className={styles.welcome_container}>
-    <div className={styles.hamburger}>{}</div>
+const HealthCareIndexComponent = (props) => {
+  const [showHamburger, setShowHamburger] = useState(false);
+  const healthName = useSelector(state => state.healthCareProvider.healthRegisterData.name)
+  const patientDummyData = [
+    {
+      name: "Kingsley Ekpe",
+      illness: "Malaria",
+    },
+    {
+      name: "Mariam S",
+      illness: "Tuberclosis",
+    },
+    {
+      name: "Kendrick Lamar",
+      illness: "Myopia",
+    },
+    {
+      name: "Uche Kenneth",
+      illness: "Whooping cough",
+    },
+  ];
+
+  const updateHamburgerStateHandler = () => [
+    setShowHamburger(false)
+  ]
+
+  return (
+    <section className={styles.container}>
+      {showHamburger && <HamBurgerComponent removeHamburger={updateHamburgerStateHandler}/>}
+      <ul className={styles.welcome_container}>
+        <div
+          className={styles.hamBurger}
+          onClick={() => {
+            setShowHamburger(true);
+          }}
+        >
+          {svgObject.hamBurgerSvg}
+        </div>
         <li>
           <div className={styles.welcome_text}>
             <h3>Welcome Back!</h3>
           </div>
           <div className={styles.welcome_name}>
-            <h4>Winston Ekpong!</h4>
+            <h4>Dr. {healthName}</h4>
           </div>
         </li>
         <li className={styles.notifications}>{svgObject.notification}</li>
       </ul>
+      <h2>Your Patients</h2>
+      {patientDummyData.map((el) => {
+        return <HealthPatientItem itemData={el} key={Math.random()} />;
+      })}
     </section>
-}
+  );
+};
 
 export default HealthCareIndexComponent;
