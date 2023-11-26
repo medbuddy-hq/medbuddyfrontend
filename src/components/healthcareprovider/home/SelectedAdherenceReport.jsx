@@ -2,8 +2,10 @@ import styles from "./SelectedAdherenceReport.module.css";
 import { useSelector } from "react-redux";
 import Link from "next/link";
 import svgObject from "@/styles/svgIcons";
+import { useEffect } from "react";
 
 const SelectedAdherenceReport = (props) => {
+  const [imagePath, setImagePath] = useState([])
   const patientData = useSelector(
     (state) => state.healthCareProvider.selectedPatient
   );
@@ -28,7 +30,11 @@ const SelectedAdherenceReport = (props) => {
   }
 ];
 
-const imagePath = imageRoutesObject.filter(el => el.num === patientData.imageNum);
+useEffect(() => {
+      setImagePath(imageRoutesObject.filter(el => el.num === patientData.imageNum))
+}, [])
+
+
 
 console.log(imagePath)
 

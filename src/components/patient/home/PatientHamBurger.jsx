@@ -39,7 +39,7 @@ useEffect(() => {
           </div>
           <div>
             <div className={styles.shareApp}>{svgObject.shareApp}</div>
-            <div>Share app with friends</div>
+            <div className={styles.sideBar_text}>Share app</div>
           </div>
         </div>
         <div className={styles.log_out} onClick={logOutHandler}>

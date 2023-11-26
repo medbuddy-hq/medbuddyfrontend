@@ -84,7 +84,6 @@ const LoginComponent = (props) => {
         console.log(response)
 
         localStorage.setItem("token", response.data.data.token);
-        setDataisFetching(false);
         //Navigate to the regComplete page upon completion
         router.push("/patient/home");
       } catch (err) {

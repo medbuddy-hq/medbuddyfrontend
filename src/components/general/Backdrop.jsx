@@ -1,4 +1,4 @@
-const Backdrop = () => {
+const Backdrop = props => {
     return <div style={{
         height: '100%',
         width: '100%',

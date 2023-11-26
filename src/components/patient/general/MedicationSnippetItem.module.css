@@ -1,0 +1,51 @@
+
+
+.container {
+    height: 10rem;
+    width: 10rem;
+    position: fixed;
+    z-index: 1000;
+    bottom: 10%;
+    left: 30%;
+    color: white;
+}
+
+.top_list {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.top_list li {
+    display: flex;
+}
+
+.top_list li div {
+    margin: 0 0.25rem;
+}
+
+.blue_container {
+   padding: 1rem;
+}
+
+.drug_header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 1rem;
+    border: 1px solid white;
+}
+
+.info_buttons_item > div{
+   margin-right: 0.5rem; 
+}
+
+.action_buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.action_buttons_item {
+    display: flex;
+    flex-direction: column;
+}

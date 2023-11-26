@@ -4,6 +4,7 @@ import HealthPatientItem from "./HealthPatientItem";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import HamBurgerComponent from "./HamBurgerComponent";
+import Backdrop from "@/components/general/Backdrop";
 
 
 const HealthCareIndexComponent = (props) => {
@@ -51,7 +52,7 @@ const HealthCareIndexComponent = (props) => {
         </div>
         <li>
           <div className={styles.welcome_text}>
-            <h3>Welcome Back!</h3>
+            <h3>Welcome!</h3>
           </div>
           <div className={styles.welcome_name}>
             <h4>Dr. {healthName}</h4>
