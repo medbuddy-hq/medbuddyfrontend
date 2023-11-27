@@ -70,3 +70,8 @@
     justify-content: flex-end;
     right: 2rem;
   }
+
+  .chat_box {
+    height: 3rem;
+    width: 3rem;
+  }

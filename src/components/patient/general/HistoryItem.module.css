@@ -19,3 +19,8 @@
    font-size: 0.75rem;
    line-height: 0.6rem;
 }
+
+.threeDots {
+   height: 2rem;
+   width: 2rem;
+}

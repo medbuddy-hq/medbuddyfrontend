@@ -19,6 +19,8 @@
 .search_icon {
     padding: 0.5rem;
     cursor: pointer;
+    height: 3rem;
+    width: 3rem;
 }
 
 .search_field input {

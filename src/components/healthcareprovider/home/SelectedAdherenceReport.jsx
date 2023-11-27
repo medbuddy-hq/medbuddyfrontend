@@ -59,7 +59,7 @@ console.log(imagePath)
     <div className={styles.adherence_item}>{svgObject.adherenceFrameOneSvg}</div>
     <div className={styles.adherence_item}>{svgObject.adherenceFrameTwoSvg}</div>
     <div className={styles.chatIcon}>
-<Link href=''>
+<Link href='' className={styles.chat_box}>
     {svgObject.chatBox}
 </Link>
     </div>
