@@ -44,11 +44,11 @@ border-radius: 0.6rem;
 
 .drug_name_svg, .drug_calender_svg, .comments_svg{
     height: 2rem;
-    min-width: 10%;
+    min-width: 1rem;
 }
 
 .drug_calender_svg {
-    min-width: 5%;
+    min-width: 1rem;
 }
 
 
@@ -58,8 +58,8 @@ border-radius: 0.6rem;
     margin-bottom: 1rem;
 }
 
-.info_buttons_item > div{
-   margin-right: 0.5rem; 
+.info_buttons_item > div:last-child{
+   margin-left: 0.5rem; 
 }
 
 .action_buttons {
