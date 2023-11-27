@@ -36,6 +36,15 @@ const LoginComponent = (props) => {
 
   console.log(loginDetails);
 
+  const setGoBackHandler = () => {
+    const token = localStorage.getItem("token");
+    if (token === "undefined" || token === null) {
+      router.push("/");
+    } else {
+      router.back();
+    }
+  };
+
   const updateEmailHandler = (event) => {
     const value = event.target.value.trim();
     if (!emailChecker(value) || value.length === 0) {
@@ -81,7 +90,7 @@ const LoginComponent = (props) => {
         console.log(registerRequest.status);
 
         const response = await registerRequest.json();
-        console.log(response)
+        console.log(response);
 
         localStorage.setItem("token", response.data.data.token);
         //Navigate to the regComplete page upon completion
@@ -94,66 +103,70 @@ const LoginComponent = (props) => {
   };
   return (
     <section className={styles.container}>
+   {!dataIsFetching &&  <div className={styles.back} onClick={setGoBackHandler}>
+        <div className={styles.back_button}>{svgObject.goBack}</div>
+      </div>}  
       {dataIsFetching && (
         <div className={styles.loading_spinner}>
           <TailSpin
             color="#066dfe"
-            height="100"
-            width="100"
+            height="50"
+            width="50"
             ariaLabel="tail-spin-loading"
             visible={true}
           />
         </div>
       )}
-      {!dataIsFetching && <div>
-        <div className={classes.home_svg}>
-        <div>{svgObject.medBuddyLogo}</div>
-      </div>
-      <div>
-        <div className={classes.login_prompt}>
-          <h1>Log In</h1>
-        </div>
+      {!dataIsFetching && (
+        <div>
+          <div className={classes.home_svg}>
+            <div>{svgObject.medBuddyLogo}</div>
+          </div>
+          <div>
+            <div className={classes.login_prompt}>
+              <h1>Log In</h1>
+            </div>
 
-        <div className={styles.form_input}>
-          <label htmlFor="email">Email</label>
-          <input
-            type="text"
-            id="email"
-            placeholder="Enter your email here"
-            onChange={updateEmailHandler}
-          />
-          {showEmailError && (
-            <div className={styles.error_message}>
-              please enter a valid email
+            <div className={styles.form_input}>
+              <label htmlFor="email">Email</label>
+              <input
+                type="text"
+                id="email"
+                placeholder="Enter your email here"
+                onChange={updateEmailHandler}
+              />
+              {showEmailError && (
+                <div className={styles.error_message}>
+                  please enter a valid email
+                </div>
+              )}
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                placeholder="Enter your password here"
+                onChange={updatePasswordHandler}
+              />
+              {showPasswordError && (
+                <div className={styles.error_message}>
+                  password should be longer than seven characters
+                </div>
+              )}
+              <div className={classes.get_started}>
+                {" "}
+                Don't have an account yet?{" "}
+                <Link href="/create-profile">Get Started</Link>
+              </div>
             </div>
-          )}
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            placeholder="Enter your password here"
-            onChange={updatePasswordHandler}
-          />
-          {showPasswordError && (
-            <div className={styles.error_message}>
-              password should be longer than seven characters
+          </div>
+
+          <div className={styles.next_question}>
+            <div onClick={loginHandler} className={buttonClass}>
+              Log In &gt;
             </div>
-          )}
-          <div className={classes.get_started}>
-            {" "}
-            Don't have an account yet?{" "}
-            <Link href="/create-profile">Get Started</Link>
           </div>
         </div>
-      </div>
-
-      <div className={styles.next_question}>
-        <div onClick={loginHandler} className={buttonClass}>
-          Log In &gt;
-        </div>
-      </div>
-        </div>}
-
+      )}
     </section>
   );
 };

@@ -5,15 +5,25 @@
   height: 100%;
 }
 
+.header_deets {
+  display: flex;
+}
+
+.header_deets h3 {
+  align-self: center;
+}
+
+
+
 .back {
-  width: 100%;
   height: 10%;
   display: flex;
+  margin-right: 2rem;
 }
 
 .back_button {
   height: 100%;
-  width: 10%;
+  width: 3rem;
   display: block;
 }
 

@@ -7,6 +7,7 @@ const Backdrop = props => {
         left: '0',
         background: 'rgba(0,0,0.0.8)',
         backdropFilter: 'blur(10px)',
+        WebkitBackdropFilter: 'blur(10px)',
         zIndex: '150'
     }} onClick={() => {
         props.remove()

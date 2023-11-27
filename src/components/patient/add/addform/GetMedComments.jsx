@@ -9,6 +9,7 @@ import { registerMedicationActions } from "@/store/generalStore";
 import { useSelector } from "react-redux";
 
 const GetMedComments = (props) => {
+
   const [dataIsFetching, setDataisFetching] = useState(false);
   const medData = useSelector((state) => state.registerMedication.medData);
 
@@ -21,6 +22,15 @@ const GetMedComments = (props) => {
     setText(event.target.value);
   };
 
+  const setGoBackHandler = () => {
+    const token = localStorage.getItem("token");
+    if (token === "undefined" || token === null) {
+      router.push("/");
+    } else {
+      router.back();
+    }
+  };
+ 
   const nextPageHandler = async () => {
     dispatch(
       registerMedicationActions.updateMedicationData([
@@ -89,8 +99,8 @@ const GetMedComments = (props) => {
         >
           <TailSpin
             color="#066dfe"
-            height="70"
-            width="70"
+            height="50"
+            width="50"
             ariaLabel="tail-spin-loading"
             visible={true}
           />
@@ -98,11 +108,15 @@ const GetMedComments = (props) => {
       )}
       {!dataIsFetching && (
         <div>
-          <div className={styles.back}>
-            <Link href="/med-length" className={styles.back_button}>
+          <div className={styles.header_deets}>
+          <div className={styles.back} onClick={setGoBackHandler}>
+            <div className={styles.back_button}>
               {svgObject.goBack}
-            </Link>
+            </div>
           </div>
+            <h3> {medData.medicine.name} {medData.medicine.strength}</h3>
+          </div>
+
           <div>{svgObject.hundredpercent}</div>
           <form className={styles.form}>
             <div className={styles.form_input}>

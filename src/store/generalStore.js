@@ -67,7 +67,7 @@ const initialMedicationState = {
     }),
     dosage_quantity: "2 tablets",
     daily_dosage: 0,
-    total_number_of_dosage: 0, // total number of times the drug should be taken
+    total_number_of_dosage: 1, // total number of times the drug should be taken
     treatment: "headache",
     comment:
       "drug should be taken immediately after eating in the morning, afternoon and night",

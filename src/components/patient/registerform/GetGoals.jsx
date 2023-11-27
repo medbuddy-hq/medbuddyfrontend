@@ -89,8 +89,8 @@ const GetGoals = (props) => {
         <div className={styles.loading_spinner}>
           <TailSpin
             color="#066dfe"
-            height="100"
-            width="100"
+            height="50"
+            width="50"
             ariaLabel="tail-spin-loading"
             visible={true}
           />

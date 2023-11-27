@@ -1,6 +1,7 @@
 import styles from "./addFormStyles.module.css";
 import svgObject from "@/styles/svgIcons";
 import Link from "next/link";
+import { registerMedicationActions } from "@/store/generalStore";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
@@ -15,7 +16,9 @@ const GetMedParameters = (props) => {
     const dispatch = useDispatch()
 
     const routeToCommentsHandler = () => {
-        router.push('/patient/add/med-comments')
+      dispatch(registerMedicationActions.updateTotalDosage(1))
+        router.push('/patient/add/med-comments');
+
     };
 
     const routeToLengthHandler = () => {

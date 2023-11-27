@@ -44,3 +44,20 @@
     height: 15rem;
     width: 15rem;
   }
+
+  .get_started {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.get_started div {
+  display: block;
+  background-color: #066dfe;
+  padding: 1rem;
+  width: 70%;
+  border-radius: 0.6rem;
+  color: white;
+  text-align: center;
+  font-size: 1.1rem;
+}

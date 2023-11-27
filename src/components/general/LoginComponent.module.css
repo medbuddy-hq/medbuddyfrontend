@@ -32,3 +32,18 @@
 .get_started a {
     text-decoration: underline;
 }
+
+.back {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .back_button {
+    height: 100%;
+    width: 10%;
+    display: block;
+  }
+  

@@ -132,8 +132,8 @@ const patientPage = () => {
         >
           <TailSpin
             color="#066dfe"
-            height="70"
-            width="70"
+            height="50"
+            width="50"
             ariaLabel="tail-spin-loading"
             visible={true}
           />
