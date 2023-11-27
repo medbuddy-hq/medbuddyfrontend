@@ -13,7 +13,7 @@ const MedFrequencyItem = props => {
       dispatch(registerMedicationActions.updateMedicationData([{
         daily_dosage : value
       }]))
-      router.push('/patient/add/med-parameters')
+      router.push('/patient/add/med-time')
   
     };
 

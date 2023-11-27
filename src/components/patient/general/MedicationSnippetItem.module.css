@@ -47,6 +47,10 @@ border-radius: 0.6rem;
     min-width: 10%;
 }
 
+.drug_calender_svg {
+    min-width: 5%;
+}
+
 
 
 .info_buttons_item {
@@ -73,8 +77,13 @@ border-radius: 0.6rem;
 }
 
 .check_or_skip {
-    padding: 1.3rem;
+    padding: 1rem 1.5rem;
     border-radius: 60%;
     font-size: 1.3rem;
     margin-bottom: 0.25rem;
+}
+
+.svgsvg{
+    height: 1rem;
+    width: 1rem;
 }

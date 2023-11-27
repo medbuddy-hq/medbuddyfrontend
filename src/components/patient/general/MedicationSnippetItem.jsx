@@ -10,10 +10,10 @@ const MedicationSnippetItem = ({ item, remove }) => {
       }}
     >
       <ul className={styles.top_list}>
-        <li>{svgObject.infoIcon}</li>
+        <li className={styles.svgsvg}>{svgObject.infoIcon}</li>
         <li>
-          <div>{svgObject.smallDeleteSvg}</div>
-          <div>{svgObject.editSwordSvg}</div>
+          <div  className={styles.svgsvg}>{svgObject.smallDeleteSvg}</div>
+          <div  className={styles.svgsvg}>{svgObject.editSwordSvg}</div>
         </li>
       </ul>
       <div

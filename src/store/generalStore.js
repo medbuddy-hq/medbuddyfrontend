@@ -66,7 +66,7 @@ const initialMedicationState = {
       day: "2-digit",
     }),
     dosage_quantity: "2 tablets",
-    daily_dosage: 0,
+    daily_dosage: 3,
     total_number_of_dosage: 1, // total number of times the drug should be taken
     treatment: "headache",
     comment:
