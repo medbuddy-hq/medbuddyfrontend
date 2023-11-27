@@ -65,7 +65,7 @@ const HealthCareIndexComponent = (props) => {
       {patientDummyData.map((el) => {
         return <HealthPatientItem itemData={el} key={Math.random()} />;
       })}
-      <HealthTabsComponent/>
+
     </section>
   );
 };
