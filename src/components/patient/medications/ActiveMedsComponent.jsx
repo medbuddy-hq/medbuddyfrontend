@@ -1,5 +1,7 @@
 import HistoryItem from "../general/HistoryItem";
 import { useSelector } from "react-redux";
+import MedSnippetCard from "../general/MedSnippetCard";
+import ActiveMedsItem from "./ActiveMedsItem";
 
 const ActiveMedsComponent = (props) => {
   const activeMeds = useSelector(state => state.patientData.data.activeMeds);
@@ -7,7 +9,7 @@ const ActiveMedsComponent = (props) => {
   return (
     <>
       {activeMeds.map((el) => {
-        return <HistoryItem key={Math.random() *1000} data={el}/>;
+        return <ActiveMedsItem item={el}/>
       })}
     </>
   );

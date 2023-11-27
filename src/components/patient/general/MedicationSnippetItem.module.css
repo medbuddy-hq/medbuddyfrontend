@@ -1,19 +1,22 @@
 
 
-.container {
-    height: 10rem;
-    width: 10rem;
+.med_container {
+margin: 0 2rem;
+border-radius: 0.6rem;
     position: fixed;
     z-index: 1000;
     bottom: 10%;
-    left: 30%;
+    background-color: black;
+    left: 4%;
     color: white;
+
 }
 
 .top_list {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     list-style: none;
+    margin: 1rem;
 }
 
 .top_list li {
@@ -26,14 +29,29 @@
 
 .blue_container {
    padding: 1rem;
+   margin: 1rem 0;
 }
 
 .drug_header{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
     padding-bottom: 1rem;
-    border: 1px solid white;
+    border-bottom: 1px solid white;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.drug_name_svg, .drug_calender_svg, .comments_svg{
+    height: 2rem;
+    min-width: 10%;
+}
+
+
+
+.info_buttons_item {
+    display: flex;
+    margin-bottom: 1rem;
 }
 
 .info_buttons_item > div{
@@ -43,9 +61,20 @@
 .action_buttons {
     display: flex;
     justify-content: space-around;
+    margin: 1rem 0;
 }
 
 .action_buttons_item {
     display: flex;
+    color: black;
     flex-direction: column;
+    text-align: center;
+ 
+}
+
+.check_or_skip {
+    padding: 1.3rem;
+    border-radius: 60%;
+    font-size: 1.3rem;
+    margin-bottom: 0.25rem;
 }

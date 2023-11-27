@@ -7883,6 +7883,28 @@ const instructionsSvg = (
   </svg>
 );
 
+const blackSolution = (
+  <svg
+    width="24"
+    height="39"
+    viewBox="0 0 24 39"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g clip-path="url(#clip0_120_572)">
+      <path
+        d="M7.19999 0C6.20249 0 5.39999 0.809931 5.39999 1.81667C5.39999 2.8234 6.20249 3.63333 7.19999 3.63333C7.52999 3.63333 7.79999 3.90583 7.79999 4.23889V9.15146C7.79999 10.0749 7.25999 10.9 6.50999 11.4299C4.02749 13.1784 2.39999 16.0851 2.39999 19.3778V33.9111C2.39999 36.5831 4.55249 38.7556 7.19999 38.7556H16.8C19.4475 38.7556 21.6 36.5831 21.6 33.9111V19.3778C21.6 16.0851 19.9725 13.1784 17.49 11.4299C16.74 10.9 16.2 10.0749 16.2 9.15146V4.23889C16.2 3.90583 16.47 3.63333 16.8 3.63333C17.7975 3.63333 18.6 2.8234 18.6 1.81667C18.6 0.809931 17.7975 0 16.8 0H7.19999ZM12 28.9153C10.0125 28.9153 8.39999 27.3938 8.39999 25.509C8.39999 24.2374 10.0575 21.8681 11.1225 20.4829C11.5725 19.8925 12.435 19.8925 12.885 20.4829C13.9425 21.8681 15.6 24.2374 15.6 25.509C15.6 27.3938 13.9875 28.9153 12 28.9153Z"
+        fill="#1F1F1F"
+      />
+    </g>
+    <defs>
+      <clipPath id="clip0_120_572">
+        <rect width="24" height="38.7556" fill="white" />
+      </clipPath>
+    </defs>
+  </svg>
+);
+
 const enterEmail = (
   <svg
     width="223"
@@ -8015,6 +8037,7 @@ const svgObject = {
   welcome: welcomeSvg,
   bottle: bottleIcon,
   blueBottle,
+  whiteCommentsvg,
   pills: pillsIcon,
   search: searchIcon,
   medbuddyHome: medbuddyHomeSvg,
@@ -8060,6 +8083,7 @@ const svgObject = {
   goBack: goBackSvg,
   chatBox,
   infoIcon,
+  blackSolution,
   skipSvg,
   takeSvg,
   constructionSvg,
