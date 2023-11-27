@@ -6,7 +6,10 @@ import svgObject from "@/styles/svgIcons";
 import { useEffect } from "react";
 
 const SelectedAdherenceReport = (props) => {
-  const [imagePath, setImagePath] = useState([])
+  const [imagePath, setImagePath] = useState([ {
+    num: '2',
+    path: '/images/image-2.png'
+  }])
   const patientData = useSelector(
     (state) => state.healthCareProvider.selectedPatient
   );
