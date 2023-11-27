@@ -28,15 +28,9 @@ const MedicationSnippetItem = ({ item, remove }) => {
         </div>
         <div className={styles.info_buttons}>
           <div className={styles.info_buttons_item}>
-            <div className={styles.drug_calender_svg}>
-              {svgObject.whiteCalender}
-            </div>
             <div>Scheduled for 7:35 PM, today.</div>
           </div>
           <div className={styles.info_buttons_item}>
-            <div className={styles.comments_svg}>
-              {svgObject.whiteCommentsvg}
-            </div>
             <div>
               {item.strength} {item.comment}
             </div>

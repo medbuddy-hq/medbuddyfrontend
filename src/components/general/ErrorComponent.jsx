@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 const ErrorComponent = (props) => {
   const router = useRouter();
 
+
   const setGoBackHandler = () => {
     const token = localStorage.getItem("token");
     if (token === "undefined" || token === null) {
@@ -26,7 +27,7 @@ const ErrorComponent = (props) => {
         <div className={styles.errorSvg}>{svgObject.errorSvg}</div>
       </div>
       <div className={styles.get_started} onClick={setGoBackHandler}>
-        <div href="medic-patient"> Get Started</div>
+        <div href="medic-patient"> {1 === "undefined" || 1 === null ? 'Get Started': 'Go Back'}</div>
       </div>
     </section>
   );

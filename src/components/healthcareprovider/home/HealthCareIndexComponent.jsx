@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { useState } from "react";
 import HamBurgerComponent from "./HamBurgerComponent";
 import Backdrop from "@/components/general/Backdrop";
+import HealthTabsComponent from "../general/HealthTabsComponent";
 
 
 const HealthCareIndexComponent = (props) => {
@@ -64,6 +65,7 @@ const HealthCareIndexComponent = (props) => {
       {patientDummyData.map((el) => {
         return <HealthPatientItem itemData={el} key={Math.random()} />;
       })}
+      <HealthTabsComponent/>
     </section>
   );
 };

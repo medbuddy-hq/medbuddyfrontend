@@ -11,15 +11,19 @@ const patientPage = () => {
   const dispatch = useDispatch();
   const [fetchingData, setFetchingData] = useState(true);
 
+
   useEffect(() => {
     const getPatientData = async () => {
       const token = localStorage.getItem("token");
+      prompt(token)
       console.log(token);
       //For there to be a token, that means a user is signed In
       //We then use said token to make the call
       //Remember, localStorage ALWAYS returns a string in this case
       //If there is no such item, localST returns 'undefined'. It is a string
-      if (token !== undefined || token !== null) {
+      if (token !== 'undefined' || token !== null) {
+        console.log('vmdjdk')
+  
         setFetchingData(true);
         try {
           //Fetch Name of Patient
@@ -132,8 +136,8 @@ const patientPage = () => {
         >
           <TailSpin
             color="#066dfe"
-            height="50"
-            width="50"
+            height="30"
+            width="30"
             ariaLabel="tail-spin-loading"
             visible={true}
           />
@@ -141,6 +145,7 @@ const patientPage = () => {
       )}
       {!fetchingData && (
         <>
+        
           <IndexComponent />
           <TabsComponent />
         </>

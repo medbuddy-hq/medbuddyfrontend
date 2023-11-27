@@ -5,7 +5,7 @@ import HealthCareIndexComponent from "@/components/healthcareprovider/home/Healt
 const healthCareProvider = () => {
    return <>
    <HealthCareIndexComponent/>
-   <HealthTabsComponent/>
+
    </>
 }
 
