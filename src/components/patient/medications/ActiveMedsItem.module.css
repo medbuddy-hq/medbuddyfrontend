@@ -12,7 +12,7 @@
 }
 
 .image_svg, .solution_svg {
-    padding-right: 1rem;
+    padding-right: 0.5rem;
     border-right: 2px solid black;
     height: 4.5rem;
     width: 4.5rem;
@@ -25,6 +25,7 @@
 .drug_name {
     display: flex;
     flex-direction: column;
+    text-align: left;
     justify-content: space-between;
 }
 
