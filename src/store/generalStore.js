@@ -1,5 +1,7 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 
+
+
 const patientDataInitialState = {
   data: {
     nameOfPatient: "Chike Edet",
@@ -70,7 +72,7 @@ const initialMedicationState = {
     total_number_of_dosage: 1, // total number of times the drug should be taken
     treatment: "headache",
     comment:
-      "drug should be taken immediately after eating in the morning, afternoon and night",
+      "Make sure you talk to the Doctor",
     dosage_times: ["08:30:00", "15:00:05", "20:00:05"], // the length of this should match 'daily_dosage'
     medicine: {
       name: "Paracetamol",
@@ -95,6 +97,22 @@ const healthCareProvider = createSlice({
     },
   },
 });
+
+
+const tokenSlice = createSlice({
+  name: 'token',
+  initialState: {
+    token: ''
+  },
+  reducers: {
+    updateToken(state, action){
+    state.token = action.payload
+    },
+    removeToken(state, action){
+     state.token = ''
+    }
+  }
+})
 
 const patientData = createSlice({
   name: "patientData",
@@ -173,6 +191,7 @@ export const registerPatientActions = RegisterPatientData.actions;
 export const registerMedicationActions = RegisterMedicationData.actions;
 export const healthCareProviderActions = healthCareProvider.actions;
 export const patientDataActions = patientData.actions;
+export const tokenActions = tokenSlice.actions
 
 const store = configureStore({
   reducer: {
@@ -180,6 +199,7 @@ const store = configureStore({
     registerPatient: RegisterPatientData.reducer,
     registerMedication: RegisterMedicationData.reducer,
     patientData: patientData.reducer,
+    token: tokenSlice.reducer
   },
 });
 

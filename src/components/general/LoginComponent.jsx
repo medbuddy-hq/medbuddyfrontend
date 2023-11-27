@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
+import { tokenActions } from "@/store/generalStore";
 import { emailChecker } from "../patient/registerform/GetEmailAndPass";
 import { TailSpin } from "react-loader-spinner";
 
@@ -37,8 +38,7 @@ const LoginComponent = (props) => {
   console.log(loginDetails);
 
   const setGoBackHandler = () => {
-    const token = localStorage.getItem("token");
-    if (token === "undefined" || token === null) {
+    if (token === '') {
       router.push("/");
     } else {
       router.back();
@@ -92,7 +92,7 @@ const LoginComponent = (props) => {
         const response = await registerRequest.json();
         console.log(response);
 
-        localStorage.setItem("token", response.data.data.token);
+   dispatch(tokenActions.updateToken(response.data.data.token))
         //Navigate to the regComplete page upon completion
         router.push("/patient/home");
       } catch (err) {

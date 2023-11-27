@@ -1,5 +1,4 @@
 import styles from "./addFormStyles.module.css";
-import Link from "next/link";
 import svgObject from "@/styles/svgIcons";
 import { useState } from "react";
 import { useRouter } from "next/router";
@@ -9,7 +8,7 @@ import { registerMedicationActions } from "@/store/generalStore";
 import { useSelector } from "react-redux";
 
 const GetMedComments = (props) => {
-
+  const token = useSelector(state => state.token.token)
   const [dataIsFetching, setDataisFetching] = useState(false);
   const medData = useSelector((state) => state.registerMedication.medData);
 
@@ -23,14 +22,16 @@ const GetMedComments = (props) => {
   };
 
   const setGoBackHandler = () => {
-    const token = localStorage.getItem("token");
-    if (token === "undefined" || token === null) {
+    if (token === '') {
       router.push("/");
     } else {
       router.back();
     }
   };
- 
+
+  console.log(token)
+
+
   const nextPageHandler = async () => {
     dispatch(
       registerMedicationActions.updateMedicationData([
@@ -40,14 +41,11 @@ const GetMedComments = (props) => {
       ])
     );
 
-    setTimeout(async () => {
-      const token = localStorage.getItem("token");
-      console.log(token);
       //For there to be a token, that means a user is signed In
       //We then use said token to make the call
       //Remember, localStorage ALWAYS returns a string
       //If there is no such item, localST returns 'undefined'. It is a string
-      if (token !== "undefined") {
+      if (token !== '') {
         setDataisFetching(true);
         try {
           const registerRequest = await fetch(`/api/register-med`, {
@@ -80,7 +78,6 @@ const GetMedComments = (props) => {
         // we send them back to the login page
         router.push("/");
       }
-    }, 2000);
   };
 
   console.log(medData);
@@ -99,8 +96,8 @@ const GetMedComments = (props) => {
         >
           <TailSpin
             color="#066dfe"
-            height="50"
-            width="50"
+            height="30"
+            width="30"
             ariaLabel="tail-spin-loading"
             visible={true}
           />

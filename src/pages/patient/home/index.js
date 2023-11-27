@@ -5,8 +5,10 @@ import { TailSpin } from "react-loader-spinner";
 import { useDispatch } from "react-redux";
 import { useRouter } from "next/router";
 import { patientDataActions } from "@/store/generalStore";
+import { useSelector } from "react-redux";
 
 const patientPage = () => {
+  const token = useSelector(state => state.token.token)
   const router = useRouter();
   const dispatch = useDispatch();
   const [fetchingData, setFetchingData] = useState(true);
@@ -14,16 +16,11 @@ const patientPage = () => {
 
   useEffect(() => {
     const getPatientData = async () => {
-      const token = localStorage.getItem("token");
-      prompt(token)
-      console.log(token);
       //For there to be a token, that means a user is signed In
       //We then use said token to make the call
       //Remember, localStorage ALWAYS returns a string in this case
       //If there is no such item, localST returns 'undefined'. It is a string
-      if (token !== 'undefined' || token !== null) {
-        console.log('vmdjdk')
-  
+      if (token !== '') {
         setFetchingData(true);
         try {
           //Fetch Name of Patient

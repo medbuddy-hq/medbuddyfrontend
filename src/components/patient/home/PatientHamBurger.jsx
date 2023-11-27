@@ -1,23 +1,16 @@
 import styles from "../../healthcareprovider/home/HamBurger.module.css";
 import svgObject from "@/styles/svgIcons";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { tokenActions } from "@/store/generalStore";
+import { useDispatch } from "react-redux";
 
 const PatientHamBurgerComponent = (props) => {
-  const [deleteToken, setDeleteToken] = useState(false);
+const dispatch = useDispatch()
   const router = useRouter();
 
-useEffect(() => {
-   
-    const removeToken = () => {
-        localStorage.removeItem('token'); 
-      };
-
-      removeToken()
-}, [deleteToken])
 
   const logOutHandler = (event) => {
-    setDeleteToken(true);
+dispatch(tokenActions.removeToken())
     router.push("/");
   };
 

@@ -9,7 +9,7 @@ const ActiveMedsItem = ({ item }) => {
       </div>
       <div className={styles.drug_name}>
         <div className={styles.name}> {item.name} </div>
-        <div> next pill.today 8pm </div>
+        <div> {item.treatment}</div>
       </div>
       <div className={styles.dosage}>{item.strength}</div>
     </section>

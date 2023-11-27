@@ -1,15 +1,16 @@
 import styles from "./ErrorComponent.module.css";
 import svgObject from "@/styles/svgIcons";
 import Link from "next/link";
+import { useSelector } from "react-redux";
 import { useRouter } from "next/router";
 
 const ErrorComponent = (props) => {
   const router = useRouter();
+  const token = useSelector(state => state.token.token)
 
 
   const setGoBackHandler = () => {
-    const token = localStorage.getItem("token");
-    if (token === "undefined" || token === null) {
+    if (token === "") {
       router.push("/");
     } else {
       router.back();

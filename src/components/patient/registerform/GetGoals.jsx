@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { registerPatientActions } from "@/store/generalStore";
+import { tokenActions } from "@/store/generalStore";
 import { useState } from "react";
 
 const GetGoals = (props) => {
@@ -72,6 +73,7 @@ const GetGoals = (props) => {
         const response = await registerRequest.json();
         console.log(response);
         console.log(response.data.data.token)
+        dispatch(tokenActions.updateToken(response.data.data.token))
         localStorage.setItem("token", response.data.data.token);
         setDataisFetching(false)
         //Navigate to the regComplete page upon completion

@@ -5,6 +5,7 @@ import ActiveMedsItem from "./ActiveMedsItem";
 
 const ActiveMedsComponent = (props) => {
   const activeMeds = useSelector(state => state.patientData.data.activeMeds);
+  console.log(activeMeds)
 
   return (
     <>

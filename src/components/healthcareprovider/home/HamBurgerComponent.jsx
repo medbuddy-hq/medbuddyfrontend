@@ -1,23 +1,16 @@
 import styles from "./HamBurger.module.css";
 import svgObject from "@/styles/svgIcons";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { tokenActions } from "@/store/generalStore";
 
 const HamBurgerComponent = (props) => {
-  const [deleteToken, setDeleteToken] = useState(false);
+  const dispatch = useDispatch()
   const router = useRouter();
 
-useEffect(() => {
-   
-    const removeToken = () => {
-        localStorage.removeItem('token'); 
-      };
-
-      removeToken()
-}, [deleteToken])
 
   const logOutHandler = (event) => {
-    setDeleteToken(true);
+    dispatch(tokenActions.removeToken())
     router.push("/");
   };
 
