@@ -22,7 +22,7 @@ dispatch(tokenActions.removeToken())
         <div className={styles.patients_heading}>Patients</div>
         <div className={styles.invite}>
           <div className={styles.iv}>{svgObject.invitePatient}</div>
-          <div> Invite Professional</div>
+          <div> Add Doctor</div>
         </div>
         <div className={styles.settings_heading}>
           <div className={styles.sub_settings}> Settings</div>

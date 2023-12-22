@@ -11,12 +11,14 @@ const SignUpForm = (props) => {
   const dispatch = useDispatch();
   const [showEmailError, setShowEmailError] = useState(false);
   const [showNameError, setShowNameError] = useState(false);
+  const [showLastNameError, setShowLastNameError] = useState(false);
   const [showPasswordError, setShowPasswordError] = useState(false);
   const [showConfirmPasswordError, setShowConfirmPasswordError] =
     useState(false);
   const router = useRouter();
   const [nameEmailAndPassDetails, setNameEmailAndPassDetails] = useState({
-    name: "",
+    firstname: "",
+    lastname: "",
     email: "",
     password: "",
   });
@@ -31,7 +33,8 @@ const SignUpForm = (props) => {
     if (
       emailChecker(nameEmailAndPassDetails.email) &&
       nameEmailAndPassDetails.password.length > 7 &&
-      nameEmailAndPassDetails.name.length > 2
+      nameEmailAndPassDetails.firstname.length > 2 &&
+      nameEmailAndPassDetails.lastname.length > 2 
     ) {
       setFormValid(true);
     } else {
@@ -76,7 +79,7 @@ const SignUpForm = (props) => {
     }));
   };
 
-  const updateNameHandler = (event) => {
+  const updateFirstNameHandler = (event) => {
     const value = event.target.value.trim();
     if (value.length < 3 || value.length === 0) {
       setShowNameError(true);
@@ -85,18 +88,35 @@ const SignUpForm = (props) => {
     }
     setNameEmailAndPassDetails((prevState) => ({
       ...prevState,
-      name: value,
+      firstname: value,
+    }));
+  };
+
+  const updateLastNameHandler = (event) => {
+    const value = event.target.value.trim();
+    if (value.length < 2 || value.length === 0) {
+      setShowLastNameError(true);
+    } else {
+      setShowLastNameError(false);
+    }
+    setNameEmailAndPassDetails((prevState) => ({
+      ...prevState,
+      lastname: value,
     }));
   };
 
   const nextPageHandler = () => {
     //Here, we update the store with data from the validated form and then
-     // programatically move to the next page
+    // programatically move to the next page
     if (formValid) {
-      dispatch(healthCareProviderActions.updateHealthRegisterData(nameEmailAndPassDetails))   
-    }    
-     //Navigate to the next page
-    router.push("/healthcareprovider/registerform/areaofexpertise");
+      dispatch(
+        healthCareProviderActions.updateHealthRegisterData(
+          nameEmailAndPassDetails
+        )
+      );
+    }
+    //Navigate to the next page
+    router.push("/healthcareprovider/registerform/dateofbirth");
   };
 
   return (
@@ -115,11 +135,25 @@ const SignUpForm = (props) => {
           <input
             type="text"
             id="name"
-            placeholder="Enter your full name here"
-            onChange={updateNameHandler}
+            placeholder="Enter your first name here"
+            onChange={updateFirstNameHandler}
           />
 
           {showNameError && (
+            <div className={styles.error_message}>
+              please enter a valid name
+            </div>
+          )}
+
+          <label htmlFor="last-name">Name</label>
+          <input
+            type="text"
+            id="last-name"
+            placeholder="Enter your last name here"
+            onChange={updateLastNameHandler}
+          />
+
+          {showLastNameError && (
             <div className={styles.error_message}>
               please enter a valid name
             </div>
@@ -168,7 +202,7 @@ const SignUpForm = (props) => {
 
       <div className={styles.next_question}>
         <div onClick={nextPageHandler} className={buttonClass}>
-          Sign Up &gt;
+          Next &gt;
         </div>
       </div>
     </section>

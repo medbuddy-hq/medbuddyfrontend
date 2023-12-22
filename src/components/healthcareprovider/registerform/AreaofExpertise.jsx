@@ -6,13 +6,18 @@ import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { TailSpin } from "react-loader-spinner";
+import { useSelector } from "react-redux";
+
 
 const AreaofExpertise = (props) => {
+  const regData = useSelector(state => state.healthCareProvider.healthRegisterData)
   const [dataIsFetching, setDataIsFetching] = useState(false);
   const [text, setText] = useState("");
   const [textValid, setTextValid] = useState(false);
   const router = useRouter();
   const dispatch = useDispatch();
+
+  console.log(regData, 'drtyjg')
 
   const buttonClass = textValid
     ? `${styles.button} ${styles.valid_button}`
@@ -30,12 +35,35 @@ const AreaofExpertise = (props) => {
     setText(event.target.value);
   };
 
-  const nextPageHandler = () => {
+  const createPractitionerHandler = async () => {
     if (textValid) {
       setDataIsFetching(true);
-      setTimeout(() => {
-        router.push("/healthcareprovider/home");
-      }, 2000);
+      try {
+        const registerRequest = await fetch(`/api/register-new`, {
+          method: "POST",
+          body: JSON.stringify(regData),
+        });
+
+        if (!registerRequest.ok) {
+          // we handle the error if bad status code comes
+          const errorData = await registerRequest.json();
+          throw new Error(errorData.error || "Something went wrong");
+        }
+
+        console.log(registerRequest.status);
+
+        const response = await registerRequest.json();
+        console.log(response);
+        console.log(response.data.data.token)
+        dispatch(tokenActions.updateToken(response.data.data.token))
+        localStorage.setItem("token", response.data.data.token);
+        setDataisFetching(false)
+        //Navigate to the regComplete page upon completion
+        router.push("/patient/registerform/register-complete");
+      } catch (err) {
+        console.log(err);
+        router.push('/')
+      }
     }
   };
 
@@ -77,7 +105,7 @@ const AreaofExpertise = (props) => {
             </div>
           </form>
           <div className={styles.next_question}>
-            <div className={buttonClass} onClick={nextPageHandler}>
+            <div className={buttonClass} onClick={createPractitionerHandler}>
               Done &gt;
             </div>
           </div>

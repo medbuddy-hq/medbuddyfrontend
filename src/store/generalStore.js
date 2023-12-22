@@ -1,7 +1,5 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 
-
-
 const patientDataInitialState = {
   data: {
     nameOfPatient: "Chike Edet",
@@ -20,7 +18,7 @@ const patientDataInitialState = {
         strength: "20mg",
         form: "Tablet",
         comment: "Do not take after eating",
-        start_date: '2023/12/12'
+        start_date: "2023/12/12",
       },
     ],
     inActiveMeds: [
@@ -29,9 +27,9 @@ const patientDataInitialState = {
         strength: "20mg",
         form: "ml",
         comment: "Do not take after eating",
-        treatment: '',
-        start_date: '2022/6/6'
-      }
+        treatment: "",
+        start_date: "2022/6/6",
+      },
     ],
   },
 };
@@ -41,6 +39,7 @@ const healthCareProviderInitialState = {
     name: "",
     email: "",
     password: "",
+    expertise: "Doctor",
   },
   selectedPatient: {
     name: "",
@@ -71,8 +70,7 @@ const initialMedicationState = {
     daily_dosage: 3,
     total_number_of_dosage: 1, // total number of times the drug should be taken
     treatment: "headache",
-    comment:
-      "Make sure you talk to the Doctor",
+    comment: "Make sure you talk to the Doctor",
     dosage_times: ["08:30:00", "15:00:05", "20:00:05"], // the length of this should match 'daily_dosage'
     medicine: {
       name: "Paracetamol",
@@ -93,26 +91,28 @@ const healthCareProvider = createSlice({
       state.selectedPatient = action.payload;
     },
     updateHealthRegisterData(state, action) {
-      state.healthRegisterData = action.payload;
+      state.healthRegisterData = {
+        ...state.healthRegisterData,
+        ...action.payload,
+      };
     },
   },
 });
 
-
 const tokenSlice = createSlice({
-  name: 'token',
+  name: "token",
   initialState: {
-    token: ''
+    token: "",
   },
   reducers: {
-    updateToken(state, action){
-    state.token = action.payload
+    updateToken(state, action) {
+      state.token = action.payload;
     },
-    removeToken(state, action){
-     state.token = ''
-    }
-  }
-})
+    removeToken(state, action) {
+      state.token = "";
+    },
+  },
+});
 
 const patientData = createSlice({
   name: "patientData",
@@ -191,7 +191,7 @@ export const registerPatientActions = RegisterPatientData.actions;
 export const registerMedicationActions = RegisterMedicationData.actions;
 export const healthCareProviderActions = healthCareProvider.actions;
 export const patientDataActions = patientData.actions;
-export const tokenActions = tokenSlice.actions
+export const tokenActions = tokenSlice.actions;
 
 const store = configureStore({
   reducer: {
@@ -199,7 +199,7 @@ const store = configureStore({
     registerPatient: RegisterPatientData.reducer,
     registerMedication: RegisterMedicationData.reducer,
     patientData: patientData.reducer,
-    token: tokenSlice.reducer
+    token: tokenSlice.reducer,
   },
 });
 

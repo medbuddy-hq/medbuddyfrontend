@@ -1,9 +1,9 @@
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    console.log(req.body);
+    console.log(req.body, req.headers);
     try {
       const request = await fetch(
-        "https://medbuddy-7w7q.onrender.com/api/v1/patient",
+       req.headers.role === 'patient' ? "https://medbuddy-7w7q.onrender.com/api/v1/patient" : 'https://medbuddy-7w7q.onrender.com/api/v1/practitioner',
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

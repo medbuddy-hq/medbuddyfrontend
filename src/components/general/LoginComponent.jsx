@@ -94,7 +94,12 @@ const LoginComponent = (props) => {
 
    dispatch(tokenActions.updateToken(response.data.data.token))
         //Navigate to the regComplete page upon completion
-        router.push("/patient/home");
+        if(data.data.user.role === 2) {
+          router.push("/patient/home");
+        }else {
+          router.push('/healthcareprovider/home')
+        }
+  
       } catch (err) {
         console.log(err);
         router.push("/");
@@ -110,8 +115,8 @@ const LoginComponent = (props) => {
         <div className={styles.loading_spinner}>
           <TailSpin
             color="#066dfe"
-            height="50"
-            width="50"
+            height="30"
+            width="30"
             ariaLabel="tail-spin-loading"
             visible={true}
           />

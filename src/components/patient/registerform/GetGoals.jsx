@@ -60,6 +60,9 @@ const GetGoals = (props) => {
         const registerRequest = await fetch(`/api/register-new`, {
           method: "POST",
           body: JSON.stringify(userData),
+          headers: {
+            role : 'patient'
+          }
         });
 
         if (!registerRequest.ok) {
