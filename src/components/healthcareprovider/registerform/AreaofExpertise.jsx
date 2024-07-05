@@ -1,5 +1,6 @@
 import styles from "../../../components/patient/add/addform/addFormStyles.module.css";
 import classes from "./AreaofExpertise.module.css";
+import { healthCareProviderActions } from "@/store/generalStore";
 import Link from "next/link";
 import svgObject from "@/styles/svgIcons";
 import { useRouter } from "next/router";
@@ -36,12 +37,16 @@ const AreaofExpertise = (props) => {
   };
 
   const createPractitionerHandler = async () => {
+     dispatch(healthCareProviderActions.updateHealthRegisterData({expertise: text}))
     if (textValid) {
       setDataIsFetching(true);
       try {
         const registerRequest = await fetch(`/api/register-new`, {
           method: "POST",
           body: JSON.stringify(regData),
+          headers: {
+            role: 'practitioner'
+          }
         });
 
         if (!registerRequest.ok) {
@@ -57,7 +62,7 @@ const AreaofExpertise = (props) => {
         console.log(response.data.data.token)
         dispatch(tokenActions.updateToken(response.data.data.token))
         localStorage.setItem("token", response.data.data.token);
-        setDataisFetching(false)
+        setDataIsFetching(false)
         //Navigate to the regComplete page upon completion
         router.push("/patient/registerform/register-complete");
       } catch (err) {
@@ -70,13 +75,11 @@ const AreaofExpertise = (props) => {
   return (
     <section className={styles.container}>
       {dataIsFetching && (
-        <div className={styles.loading_spinner}>
+        <div className={classes.loading_spinner}>
           <TailSpin
             color="#066dfe"
-            height="60"
-            width="60"
             ariaLabel="tail-spin-loading"
-            visible={false}
+            visible={true}
           />
         </div>
       )}

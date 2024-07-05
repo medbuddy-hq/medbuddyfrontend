@@ -36,7 +36,8 @@ const patientDataInitialState = {
 
 const healthCareProviderInitialState = {
   healthRegisterData: {
-    name: "",
+    firstname: "",
+    lastname: '',
     email: "",
     password: "",
     expertise: "Doctor",

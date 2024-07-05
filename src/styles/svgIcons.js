@@ -1,6 +1,6 @@
 const invitePatient = (
   <svg
-    width="40"
+    max-width="40"
     height="40"
     viewBox="0 0 40 40"
     fill="none"
@@ -16,7 +16,7 @@ const invitePatient = (
 
 const whiteCommentsvg = (
   <svg
-    width="22"
+    max-width="22"
     height="22"
     viewBox="0 0 22 22"
     fill="none"
@@ -33,7 +33,7 @@ const whiteCommentsvg = (
 
 const takeSvg = (
   <svg
-    width="40"
+    max-width="40"
     height="40"
     viewBox="0 0 40 40"
     fill="none"
@@ -49,7 +49,7 @@ const takeSvg = (
 
 const skipSvg = (
   <svg
-    width="40"
+    max-width="40"
     height="40"
     viewBox="0 0 40 40"
     fill="none"
@@ -59,7 +59,7 @@ const skipSvg = (
     <path
       d="M25 15L15 25M15 15L25 25"
       stroke="#1F1F1F"
-      stroke-width="2"
+      stroke-max-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
     />
@@ -68,7 +68,7 @@ const skipSvg = (
 
 const smallDeleteSvg = (
   <svg
-    width="16"
+    max-width="16"
     height="16"
     viewBox="0 0 16 16"
     fill="none"
@@ -83,7 +83,7 @@ const smallDeleteSvg = (
 
 const editSwordSvg = (
   <svg
-    width="16"
+    max-width="16"
     height="16"
     viewBox="0 0 16 16"
     fill="none"
@@ -98,7 +98,7 @@ const editSwordSvg = (
 
 const constructionSvg = (
   <svg
-    width="296"
+    max-width="296"
     height="221"
     viewBox="0 0 296 221"
     fill="none"
@@ -3040,7 +3040,7 @@ const constructionSvg = (
 
 const errorSvg = (
   <svg
-    width="317"
+    max-width="317"
     height="200"
     viewBox="0 0 317 200"
     fill="none"
@@ -4327,7 +4327,7 @@ const errorSvg = (
 
 const adherenceFrameOneSvg = (
   <svg
-    width="335"
+    max-width="335"
     height="193"
     viewBox="0 0 335 193"
     fill="none"
@@ -4336,7 +4336,7 @@ const adherenceFrameOneSvg = (
     <rect
       x="0.5"
       y="0.5"
-      width="334"
+      max-width="334"
       height="192"
       rx="15.5"
       fill="white"
@@ -4394,7 +4394,7 @@ const adherenceFrameOneSvg = (
 
 const adherenceFrameTwoSvg = (
   <svg
-    width="335"
+    max-width="335"
     height="193"
     viewBox="0 0 335 193"
     fill="none"
@@ -4403,7 +4403,7 @@ const adherenceFrameTwoSvg = (
     <rect
       x="0.5"
       y="0.5"
-      width="334"
+      max-width="334"
       height="192"
       rx="15.5"
       fill="white"
@@ -4461,7 +4461,7 @@ const adherenceFrameTwoSvg = (
 
 const notificationSvg = (
   <svg
-    width="24"
+    max-width="24"
     height="24"
     viewBox="0 0 24 24"
     fill="none"
@@ -4483,7 +4483,7 @@ const notificationSvg = (
     </g>
     <defs>
       <clipPath id="clip0_12_365">
-        <rect width="24" height="24" fill="white" />
+        <rect max-width="24" height="24" fill="white" />
       </clipPath>
     </defs>
   </svg>
@@ -4491,7 +4491,7 @@ const notificationSvg = (
 
 const welcomeSvg = (
   <svg
-    width="320"
+    max-width="320"
     height="239"
     viewBox="0 0 320 239"
     fill="none"
@@ -5132,7 +5132,7 @@ const welcomeSvg = (
 
 const pillsIcon = (
   <svg viewBox="0 0 48 48" fill="none">
-    <g id="SVGRepo_bgCarrier" strokeWidth="0" />
+    <g id="SVGRepo_bgCarrier" strokemax-width="0" />
 
     <g
       id="SVGRepo_tracerCarrier"
@@ -5171,7 +5171,7 @@ const pillsIcon = (
 
 const bottleIcon = (
   <svg fill="#ffffff" viewBox="0 0 24 24" stroke="#ffffff">
-    <g id="SVGRepo_bgCarrier" strokeWidth="0" />
+    <g id="SVGRepo_bgCarrier" strokemax-width="0" />
 
     <g
       id="SVGRepo_tracerCarrier"
@@ -5187,7 +5187,7 @@ const bottleIcon = (
 
 const searchIcon = (
   <svg viewBox="0 0 1024 1024" version="1.1" fill="#8f8f8f" stroke="#8f8f8f">
-    <g id="SVGRepo_bgCarrier" strokeWidth="0" />
+    <g id="SVGRepo_bgCarrier" strokemax-width="0" />
 
     <g
       id="SVGRepo_tracerCarrier"
@@ -5206,7 +5206,7 @@ const searchIcon = (
 
 const medbuddyHomeSvg = (
   <svg
-    width="375"
+    max-width="375"
     height="539"
     viewBox="0 0 375 539"
     fill="none"
@@ -6004,7 +6004,7 @@ const medbuddyHomeSvg = (
 
 const oldPersonHelpedSvg = (
   <svg
-    width="234"
+    max-width="234"
     height="239"
     viewBox="0 0 234 239"
     fill="none"
@@ -7278,7 +7278,7 @@ const oldPersonHelpedSvg = (
 
 const genderSvg = (
   <svg
-    width="38"
+    max-width="38"
     height="41"
     viewBox="0 0 38 41"
     fill="none"
@@ -7293,7 +7293,7 @@ const genderSvg = (
 
 const bioNameSvg = (
   <svg
-    width="48"
+    max-width="48"
     height="48"
     viewBox="0 0 48 48"
     fill="none"
@@ -7311,33 +7311,33 @@ const bioNameSvg = (
 
 const twentyPercentSvg = (
   <svg
-    width="335"
+    max-width="335"
     height="4"
     viewBox="0 0 335 4"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect width="335" height="4" rx="2" fill="#C2DBFF" />
-    <rect width="48" height="4" rx="2" fill="#066DFE" />
+    <rect max-width="335" height="4" rx="2" fill="#C2DBFF" />
+    <rect max-width="48" height="4" rx="2" fill="#066DFE" />
   </svg>
 );
 
 const thirtypercentSvg = (
   <svg
-    width="335"
+    max-width="335"
     height="4"
     viewBox="0 0 335 4"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect width="335" height="4" rx="2" fill="#C2DBFF" />
-    <rect width="88" height="4" rx="2" fill="#066DFE" />
+    <rect max-width="335" height="4" rx="2" fill="#C2DBFF" />
+    <rect max-width="88" height="4" rx="2" fill="#066DFE" />
   </svg>
 );
 
 const birthdaySvg = (
   <svg
-    width="40"
+    max-width="40"
     height="40"
     viewBox="0 0 40 40"
     fill="none"
@@ -7354,7 +7354,7 @@ const birthdaySvg = (
 
 const birthdaywarningsvg = (
   <svg
-    width="203"
+    max-width="203"
     height="10"
     viewBox="0 0 203 12"
     fill="none"
@@ -7373,7 +7373,7 @@ const birthdaywarningsvg = (
 
 const choosemoreWarningSvg = (
   <svg
-    width="148"
+    max-width="148"
     height="12"
     viewBox="0 0 200 12"
     fill="none"
@@ -7392,7 +7392,7 @@ const choosemoreWarningSvg = (
 
 const goalsSvg = (
   <svg
-    width="48"
+    max-width="48"
     height="48"
     viewBox="0 0 48 48"
     fill="none"
@@ -7407,7 +7407,7 @@ const goalsSvg = (
 
 const goBackSvg = (
   <svg
-    width="24"
+    max-width="24"
     height="24"
     viewBox="0 0 24 24"
     fill="none"
@@ -7422,46 +7422,46 @@ const goBackSvg = (
 
 const fiftyPercentSvg = (
   <svg
-    width="335"
+    max-width="335"
     height="4"
     viewBox="0 0 335 4"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect width="335" height="4" rx="2" fill="#C2DBFF" />
-    <rect width="135" height="4" rx="2" fill="#066DFE" />
+    <rect max-width="335" height="4" rx="2" fill="#C2DBFF" />
+    <rect max-width="135" height="4" rx="2" fill="#066DFE" />
   </svg>
 );
 
 const seventypercentSvg = (
   <svg
-    width="335"
+    max-width="335"
     height="4"
     viewBox="0 0 335 4"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect width="335" height="4" rx="2" fill="#C2DBFF" />
-    <rect width="229" height="4" rx="2" fill="#066DFE" />
+    <rect max-width="335" height="4" rx="2" fill="#C2DBFF" />
+    <rect max-width="229" height="4" rx="2" fill="#066DFE" />
   </svg>
 );
 
 const hundredpercentSvg = (
   <svg
-    width="335"
+    max-width="335"
     height="4"
     viewBox="0 0 335 4"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect width="335" height="4" rx="2" fill="#C2DBFF" />
-    <rect width="335" height="4" rx="2" fill="#066DFE" />
+    <rect max-width="335" height="4" rx="2" fill="#C2DBFF" />
+    <rect max-width="335" height="4" rx="2" fill="#066DFE" />
   </svg>
 );
 
 const tabsHome = (color = "#8F8F8F") => (
   <svg
-    width="24"
+    max-width="24"
     height="24"
     viewBox="0 0 24 24"
     fill="none"
@@ -7478,7 +7478,7 @@ const tabsHome = (color = "#8F8F8F") => (
 
 const tabsMeds = (color = "#8F8F8F") => (
   <svg
-    width="24"
+    max-width="24"
     height="24"
     viewBox="0 0 24 24"
     fill="none"
@@ -7497,7 +7497,7 @@ const tabsMeds = (color = "#8F8F8F") => (
     <rect
       x="12"
       y="11.8582"
-      width="0.490545"
+      max-width="0.490545"
       height="1.11894"
       rx="0.245272"
       transform="rotate(-46.8899 12 11.8582)"
@@ -7508,7 +7508,7 @@ const tabsMeds = (color = "#8F8F8F") => (
 
 const shareApp = (
   <svg
-    width="40"
+    max-width="40"
     height="41"
     viewBox="0 0 40 41"
     fill="none"
@@ -7524,7 +7524,7 @@ const shareApp = (
 
 const infoIcon = (
   <svg
-    width="14"
+    max-width="14"
     height="14"
     viewBox="0 0 14 14"
     fill="none"
@@ -7539,7 +7539,7 @@ const infoIcon = (
 
 const tabsProfile = (color = "#8F8F8F") => (
   <svg
-    width="24"
+    max-width="24"
     height="24"
     viewBox="0 0 24 24"
     fill="none"
@@ -7556,7 +7556,7 @@ const tabsProfile = (color = "#8F8F8F") => (
 
 const tabsMessages = (color = "#8F8F8F") => (
   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+    <g id="SVGRepo_bgCarrier" strokemax-width="0"></g>
     <g
       id="SVGRepo_tracerCarrier"
       strokeLinecap="round"
@@ -7577,7 +7577,7 @@ const tabsMessages = (color = "#8F8F8F") => (
 
 const tabsAdd = (color = "#8F8F8F") => (
   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+    <g id="SVGRepo_bgCarrier" strokemax-width="0"></g>
     <g
       id="SVGRepo_tracerCarrier"
       strokeLinecap="round"
@@ -7594,7 +7594,7 @@ const tabsAdd = (color = "#8F8F8F") => (
 
 const threeDots = (
   <svg
-    width="24"
+    max-width="24"
     height="24"
     viewBox="0 0 24 24"
     fill="none"
@@ -7608,7 +7608,7 @@ const threeDots = (
     </g>
     <defs>
       <clipPath id="clip0_14_624">
-        <rect width="24" height="24" fill="white" />
+        <rect max-width="24" height="24" fill="white" />
       </clipPath>
     </defs>
   </svg>
@@ -7616,7 +7616,7 @@ const threeDots = (
 
 const logOutDoor = (
   <svg
-    width="32"
+    max-width="32"
     height="32"
     viewBox="0 0 32 32"
     fill="none"
@@ -7633,7 +7633,7 @@ const logOutDoor = (
 
 const tabletSvg = (
   <svg
-    width="24"
+    max-width="24"
     height="24"
     viewBox="0 0 24 24"
     fill="none"
@@ -7649,7 +7649,7 @@ const tabletSvg = (
 
 const solution = (
   <svg
-    width="11"
+    max-width="11"
     height="21"
     viewBox="0 0 11 21"
     fill="none"
@@ -7664,7 +7664,7 @@ const solution = (
 
 const capsule = (
   <svg
-    width="18"
+    max-width="18"
     height="18"
     viewBox="0 0 18 18"
     fill="none"
@@ -7679,7 +7679,7 @@ const capsule = (
 
 const needle = (
   <svg
-    width="23"
+    max-width="23"
     height="22"
     viewBox="0 0 23 22"
     fill="none"
@@ -7694,7 +7694,7 @@ const needle = (
 
 const phasrmacySvg = (
   <svg
-    width="48"
+    max-width="48"
     height="48"
     viewBox="0 0 48 48"
     fill="none"
@@ -7711,7 +7711,7 @@ const phasrmacySvg = (
 
 const blueBottle = (
   <svg
-    width="24"
+    max-width="24"
     height="48"
     viewBox="0 0 24 48"
     fill="none"
@@ -7726,7 +7726,7 @@ const blueBottle = (
 
 const hamBurgerSvg = (
   <svg
-    width="24"
+    max-width="24"
     height="24"
     viewBox="0 0 24 24"
     fill="none"
@@ -7743,7 +7743,7 @@ const hamBurgerSvg = (
 
 const almostDoneSvg = (
   <svg
-    width="208"
+    max-width="208"
     height="12"
     viewBox="0 0 260 16"
     fill="none"
@@ -7762,7 +7762,7 @@ const almostDoneSvg = (
 
 const calendarSvg = (color = "#066DFE") => (
   <svg
-    width="24"
+    max-width="24"
     height="24"
     viewBox="0 0 24 24"
     fill="none"
@@ -7783,7 +7783,7 @@ const calendarSvg = (color = "#066DFE") => (
 
 const emailSvg = (
   <svg
-    width="48"
+    max-width="48"
     height="48"
     viewBox="0 0 48 48"
     fill="none"
@@ -7798,7 +7798,7 @@ const emailSvg = (
 
 const doctorSvg = (
   <svg
-    width="48"
+    max-width="48"
     height="48"
     viewBox="0 0 48 48"
     fill="none"
@@ -7813,7 +7813,7 @@ const doctorSvg = (
 
 const whiteCalender = (
   <svg
-    width="22"
+    max-width="22"
     height="22"
     viewBox="0 0 22 22"
     fill="none"
@@ -7834,7 +7834,7 @@ const whiteCalender = (
 
 const whiteQuestion = (
   <svg
-    width="40"
+    max-width="40"
     height="40"
     viewBox="0 0 40 40"
     fill="none"
@@ -7852,13 +7852,13 @@ const whiteQuestion = (
 
 const chatBox = (
   <svg
-    width="48"
+    max-width="48"
     height="48"
     viewBox="0 0 48 48"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect x="0.5" y="0.5" width="47" height="47" rx="3.5" stroke="#066DFE" />
+    <rect x="0.5" y="0.5" max-width="47" height="47" rx="3.5" stroke="#066DFE" />
     <path
       d="M16.6667 27.6667V17.3333H10.3333C8.5 17.3333 7 18.8333 7 20.6667V30.6667C7 32.5 8.5 34 10.3333 34H12V39L17 34H25.3333C27.1667 34 28.6667 32.5 28.6667 30.6667V27.6333C28.5571 27.6568 28.4454 27.6686 28.3333 27.6683H16.6667V27.6667ZM37 9H22C20.1667 9 18.6667 10.5 18.6667 12.3333V25.6667H30.3333L35.3333 30.6667V25.6667H37C38.8333 25.6667 40.3333 24.1683 40.3333 22.3333V12.3333C40.3333 10.5 38.8333 9 37 9Z"
       fill="#066DFE"
@@ -7868,7 +7868,7 @@ const chatBox = (
 
 const instructionsSvg = (
   <svg
-    width="24"
+    max-width="24"
     height="24"
     viewBox="0 0 24 24"
     fill="none"
@@ -7885,7 +7885,7 @@ const instructionsSvg = (
 
 const blackSolution = (
   <svg
-    width="24"
+    max-width="24"
     height="39"
     viewBox="0 0 24 39"
     fill="none"
@@ -7899,7 +7899,7 @@ const blackSolution = (
     </g>
     <defs>
       <clipPath id="clip0_120_572">
-        <rect width="24" height="38.7556" fill="white" />
+        <rect max-width="24" height="38.7556" fill="white" />
       </clipPath>
     </defs>
   </svg>
@@ -7907,7 +7907,7 @@ const blackSolution = (
 
 const enterEmail = (
   <svg
-    width="223"
+    max-width="223"
     height="12"
     viewBox="0 0 223 12"
     fill="none"
@@ -7926,7 +7926,7 @@ const enterEmail = (
 
 const medBuddyLogo = (
   <svg
-    width="175"
+    max-width="175"
     height="54"
     viewBox="0 0 175 54"
     fill="none"
@@ -7968,7 +7968,7 @@ const medBuddyLogo = (
     </g>
     <defs>
       <clipPath id="clip0_167_736">
-        <rect width="175" height="53.0958" fill="white" />
+        <rect max-width="175" height="53.0958" fill="white" />
       </clipPath>
     </defs>
   </svg>
@@ -7976,7 +7976,7 @@ const medBuddyLogo = (
 
 const medbuddyBW = (
   <svg
-    width="150"
+    max-width="150"
     height="47"
     viewBox="0 0 150 47"
     fill="none"
@@ -8019,7 +8019,7 @@ const medbuddyBW = (
     <defs>
       <clipPath id="clip0_175_5514">
         <rect
-          width="150"
+          max-width="150"
           height="45.5107"
           fill="white"
           transform="translate(0 0.88855)"

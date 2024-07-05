@@ -93,6 +93,7 @@
 html,
 body {
   max-width: 100vw;
+
   height: 100vh;
   overflow-x: hidden;
   font-family: Poppins-Medium, 'Courier New', Courier, monospace;

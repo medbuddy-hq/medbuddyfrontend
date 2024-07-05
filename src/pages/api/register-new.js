@@ -1,6 +1,6 @@
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    console.log(req.body, req.headers);
+    console.log( req.headers.role);
     try {
       const request = await fetch(
        req.headers.role === 'patient' ? "https://medbuddy-7w7q.onrender.com/api/v1/patient" : 'https://medbuddy-7w7q.onrender.com/api/v1/practitioner',
@@ -17,6 +17,7 @@ export default async function handler(req, res) {
       }
 
       const response = await request.json();
+      console.log(response)
 
       res.status(response.code).json({ data: response });
     } catch (error) {

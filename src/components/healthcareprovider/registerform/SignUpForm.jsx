@@ -111,7 +111,8 @@ const SignUpForm = (props) => {
     if (formValid) {
       dispatch(
         healthCareProviderActions.updateHealthRegisterData(
-          nameEmailAndPassDetails
+         nameEmailAndPassDetails
+        
         )
       );
     }
@@ -131,7 +132,7 @@ const SignUpForm = (props) => {
       </div>
       <form className={styles.form}>
         <div className={styles.form_input}>
-          <label htmlFor="name">Name</label>
+          <label htmlFor="name">First Name</label>
           <input
             type="text"
             id="name"
@@ -145,7 +146,7 @@ const SignUpForm = (props) => {
             </div>
           )}
 
-          <label htmlFor="last-name">Name</label>
+          <label htmlFor="last-name">Last Name</label>
           <input
             type="text"
             id="last-name"
